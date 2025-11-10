@@ -223,6 +223,22 @@ html {
     background-size: cover;
 }
 
+.page-header.page-header-admisiones {
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/banner_01.jpg);
+}
+
+.page-header.page-header-vida {
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/banner_02.jpg);
+}
+
+.page-header.page-header-circulares {
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/banner_03.jpg);
+}
+
+.page-header.page-header-contact {
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/banner_04.jpg);
+}
+
 .page-header-inner {
     background: rgba(15, 23, 43, .7);
 }
