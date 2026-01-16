@@ -1,0 +1,20 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Horizonte from '../components/Horizonte.astro';
+import Perfiles from '../components/Perfiles.astro';
+---
+
+<MainLayout title="Inicio">
+    <Navbar />
+    
+    <main>
+        <Hero />
+        <Horizonte />
+        <Perfiles />
+    </main>
+
+    <Footer />
+</MainLayout>

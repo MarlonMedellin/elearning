@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Sitio Institucional - IE Capilla del Rosario" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} - IE Capilla del Rosario</title>
+    <meta name="description" content={description} />
+    <link href="/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+<body class="bg-white">
+    <slot />
+
+    <!-- Back to Top -->
+    <a href="#" class="fixed bottom-12 right-12 z-50 hidden bg-primary p-3 text-white transition-all hover:bg-brand-dark back-to-top" id="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script is:inline src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script is:inline src="/lib/wow/wow.min.js"></script>
+    <script is:inline src="/lib/easing/easing.min.js"></script>
+    <script is:inline src="/lib/waypoints/waypoints.min.js"></script>
+    <script is:inline src="/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script is:inline src="/js/main.js"></script>
+
+    <script is:inline>
+        // Simple back to top toggle
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                btn?.classList.remove('hidden');
+            } else {
+                btn?.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

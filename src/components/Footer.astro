@@ -1,0 +1,91 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const portals = [
+  { 
+    group: 'Gobierno y Regulación', 
+    icon: 'lucide:building-2',
+    links: [
+        { name: 'ICFES', href: 'https://www.icfes.gov.co/' },
+        { name: 'MEN', href: 'https://www.mineducacion.gov.co/' },
+        { name: 'Alcaldía de Medellín', href: 'https://www.medellin.gov.co/' },
+        { name: 'Secretaría de Educación', href: 'https://www.medellin.edu.co/' }
+    ]
+  },
+  { 
+    group: 'Gestión Académica', 
+    icon: 'lucide:graduation-cap',
+    links: [
+        { name: 'ICETEX', href: 'https://www.icetex.gov.co/' },
+        { name: 'SIMAT', href: 'https://simatwcert.mineducacion.gov.co/simat/app' },
+        { name: 'RUPEI / SIPI', href: 'https://sipi.mineducacion.gov.co/' }
+    ]
+  },
+  {
+    group: 'Bienestar y Salud',
+    icon: 'lucide:heart',
+    links: [
+        { name: 'SIUCE', href: 'https://www.mineducacion.gov.co/1780/w3-article-404764.html' },
+        { name: 'Salud Mental', href: 'https://www.mineducacion.gov.co/1780/w3-article-421612.html' },
+        { name: 'Convivencia Escolar', href: 'https://www.icbf.gov.co/programas-y-estrategias/proteccion/programas-especializados-y-otras-estrategias/convivencia-escolar' }
+    ]
+  }
+];
+
+const contactInfo = [
+    { icon: 'lucide:map-pin', text: 'Cl. 6 Sur #79-195, Medellín' },
+    { icon: 'lucide:phone', text: '604 341 09 14' },
+    { icon: 'lucide:mail', text: 'ie.capilladelrosario@yahoo.es' }
+];
+---
+
+<footer class="bg-brand-dark text-white pt-20 pb-10">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-4 mb-16">
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <Icon name="lucide:book-open" class="h-10 w-10 text-primary" />
+                    <span class="text-2xl font-bold tracking-tight">Capilla del Rosario</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Institución educativa oficial comprometida con la excelencia y la formación integral proyectada al 2030.
+                </p>
+                <div class="flex gap-4">
+                    <!-- Redes sociales placeholder -->
+                </div>
+            </div>
+
+            {portals.map(portal => (
+                <div>
+                    <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                        <Icon name={portal.icon} class="h-5 w-5 text-primary" />
+                        {portal.group}
+                    </h4>
+                    <ul class="space-y-3">
+                        {portal.links.map(link => (
+                            <li>
+                                <a href={link.href} target="_blank" class="text-gray-400 hover:text-primary transition-colors text-sm flex items-center gap-2">
+                                    <Icon name="lucide:external-link" class="h-3 w-3" />
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+
+        <div class="pt-8 border-t border-white/10 grid gap-6 md:grid-cols-3 text-sm text-gray-400">
+            {contactInfo.map(item => (
+                <div class="flex items-center gap-3">
+                    <Icon name={item.icon} class="h-5 w-5 text-primary shrink-0" />
+                    {item.text}
+                </div>
+            ))}
+        </div>
+        
+        <div class="mt-12 text-center text-xs text-gray-500">
+            © 2026 Institución Educativa Capilla del Rosario. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>

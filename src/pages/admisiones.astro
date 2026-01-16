@@ -1,0 +1,145 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const inscripcionRequisitos = [
+  "Documento de identidad (Registro Civil o Tarjeta de Identidad).",
+  "EPS o SISBEN.",
+  "Carné de vacunas (si aplica).",
+  "Fotocopia Factura de servicios públicos.",
+  "Hoja de vida y boletín académico previos en papel membrete de la IE de procedencia."
+];
+
+const matriculaNuevos = [
+  "Documento de identidad (Registro Civil o Tarjeta de Identidad).",
+  "Certificado EPS o SISBEN.",
+  "Fotocopia Factura de servicios públicos.",
+  "Hoja de vida.",
+  "Boletín último periodo del año anterior."
+];
+
+const matriculaAntiguos = [
+  "Documento de identidad actualizado.",
+  "Certificado EPS o SISBEN vigente.",
+  "Fotocopia Factura de servicios públicos.",
+  "Boletín último periodo del año anterior."
+];
+
+const uniformeNinas = [
+  "Yomber en tela a cuadros según la muestra institucional.",
+  "Largo a máximo 3 cm por encima de la rodilla.",
+  "Camisa blanca de manga corta.",
+  "Medias blancas a la altura de la rodilla.",
+  "Zapatos negros de amarrar."
+];
+
+const uniformeNinos = [
+  "Camiseta azul rey con cuello y escudo oficial.",
+  "Jeans clásicos azul oscuro, bota recta.",
+  "Correa con hebilla sencilla.",
+  "Medias negras o azul oscuro (no tobilleras).",
+  "Zapatos totalmente negros de amarrar."
+];
+---
+
+<MainLayout title="Admisiones">
+    <Navbar />
+    <PageHeader title="Admisiones" />
+
+    <main class="space-y-20 pb-20">
+        <!-- Inscripción -->
+        <section class="container mx-auto px-4 lg:px-8" id="cupos">
+            <SectionHeader subtitle="Inscripción" title="Inscripción y Cupos Disponibles" />
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div class="p-8 border border-gray-100 rounded-2xl bg-white shadow-sm">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="fas fa-clipboard-list"></i> Requisitos
+                    </h3>
+                    <ul class="space-y-3">
+                        {inscripcionRequisitos.map(item => (
+                            <li class="text-gray-600 flex gap-2">
+                                <span class="text-primary">✓</span> {item}
+                            </li>
+                        ))}
+                    </ul>
+                    <div class="mt-6 p-4 bg-brand-light/30 rounded-xl border border-brand-light">
+                        <h4 class="font-bold text-brand-dark mb-2">Entrega</h4>
+                        <p class="text-sm text-gray-600">En carpeta manila rotulada. Documentos originales el día de la matrícula. Diligenciar con lapicero negro.</p>
+                    </div>
+                </div>
+                <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="fas fa-user-check"></i> Estudiantes Aceptados
+                    </h3>
+                    <p class="text-gray-600">
+                        Una vez verificada la documentación, se publicará el listado oficial según cupos disponibles. El listado estará disponible en PDF en esta sección o fijado en la institución.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Matrícula -->
+        <section class="bg-gray-50 py-20" id="matricula">
+            <div class="container mx-auto px-4 lg:px-8">
+                <SectionHeader subtitle="Proceso" title="Matrícula" />
+                <div class="grid gap-8 lg:grid-cols-2">
+                    <!-- Nuevos -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold text-primary mb-4">Estudiantes Nuevos</h3>
+                        <ul class="space-y-2 mb-6">
+                            {matriculaNuevos.map(item => (
+                                <li class="text-sm text-gray-600">• {item}</li>
+                            ))}
+                        </ul>
+                        <p class="text-xs text-gray-400 italic">Trámite presencial por padre/madre.</p>
+                    </div>
+                    <!-- Antiguos -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold text-primary mb-4">Estudiantes Antiguos</h3>
+                        <ul class="space-y-2 mb-6">
+                            {matriculaAntiguos.map(item => (
+                                <li class="text-sm text-gray-600">• {item}</li>
+                            ))}
+                        </ul>
+                        <p class="text-xs text-gray-400 italic">Renovación anual obligatoria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Uniformes -->
+        <section class="container mx-auto px-4 lg:px-8" id="uniformes">
+            <SectionHeader subtitle="Uniformes" title="Manual de Convivencia: Presentación" />
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="p-6 border border-gray-100 rounded-xl">
+                    <h4 class="font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="fas fa-tshirt"></i> Niñas / Jóvenes
+                    </h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        {uniformeNinas.map(item => <li>• {item}</li>)}
+                    </ul>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-xl">
+                    <h4 class="font-bold text-primary mb-4 flex items-center gap-2">
+                        <i class="fas fa-tshirt"></i> Niños / Jóvenes
+                    </h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        {uniformeNinos.map(item => <li>• {item}</li>)}
+                    </ul>
+                </div>
+                <div class="p-6 bg-brand-dark text-white rounded-xl lg:col-span-1">
+                    <h4 class="font-bold text-primary mb-4">Ed. Física</h4>
+                    <p class="text-sm text-gray-400">Camiseta blanca, sudadera azul institucional, tenis blancos o negros.</p>
+                    <div class="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded text-xs text-yellow-500">
+                         Nota: No se permite el uso de capuchas.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</MainLayout>

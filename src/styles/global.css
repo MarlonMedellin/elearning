@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #003366;
+  --color-brand-light: #F0F4F8;
+  --color-brand-dark: #001a33;
+
+  --font-heebo: "Heebo", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+}
+
+:root {
+  font-family: var(--font-nunito);
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heebo);
+}
