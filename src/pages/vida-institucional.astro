@@ -1,23 +1,36 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import PageHeader from '../components/PageHeader.astro';
-import SectionHeader from '../components/SectionHeader.astro';
-import ScheduleTable from '../components/ScheduleTable.astro';
+import { Icon } from "astro-icon/components";
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import PageHeader from "../components/PageHeader.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import ScheduleTable from "../components/ScheduleTable.astro";
 
 const niveles = [
-  { name: 'Jardín', desc: 'Nivel de formación inicial.' },
-  { name: 'Preescolar', desc: 'Nivel de formación inicial.' },
-  { name: 'Básica Primaria', desc: 'Grados 1.º a 5.º.' },
-  { name: 'Básica Secundaria', desc: 'Grados 6.º a 9.º.' },
-  { name: 'Media Técnica (Comercio)', desc: 'Grados 10.º y 11.º.' }
+    { name: "Jardín", desc: "Nivel de formación inicial." },
+    { name: "Preescolar", desc: "Nivel de formación inicial." },
+    { name: "Básica Primaria", desc: "Grados 1.º a 5.º." },
+    { name: "Básica Secundaria", desc: "Grados 6.º a 9.º." },
+    { name: "Media Técnica (Comercio)", desc: "Grados 10.º y 11.º." },
 ];
 
 const proyectos = [
-  { name: 'PRAE', icon: 'fas fa-leaf', desc: 'Educación ambiental y sostenibilidad institucional.' },
-  { name: 'Escuela de Padres', icon: 'fas fa-people-carry', desc: 'Formación y acompañamiento a familias.' },
-  { name: 'Bienestar', icon: 'fas fa-hand-holding-heart', desc: 'Acciones de apoyo y convivencia escolar.' }
+    {
+        name: "PRAE",
+        icon: "lucide:leaf",
+        desc: "Educación ambiental y sostenibilidad institucional.",
+    },
+    {
+        name: "Escuela de Padres",
+        icon: "lucide:handshake",
+        desc: "Formación y acompañamiento a familias.",
+    },
+    {
+        name: "Bienestar",
+        icon: "lucide:heart-handshake",
+        desc: "Acciones de apoyo y convivencia escolar.",
+    },
 ];
 ---
 
@@ -30,33 +43,64 @@ const proyectos = [
         <section class="container mx-auto px-4 lg:px-8" id="jornadas">
             <div class="grid gap-12 lg:grid-cols-2">
                 <div>
-                    <SectionHeader subtitle="Oferta" title="Jornadas y Niveles" />
+                    <SectionHeader
+                        subtitle="Oferta"
+                        title="Jornadas y Niveles"
+                    />
                     <div class="space-y-4">
-                        {niveles.map(nivel => (
-                            <div class="flex items-start gap-4 p-4 rounded-xl border border-gray-50 hover:border-primary/20 hover:bg-brand-light/10 transition-all">
-                                <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
-                                <div>
-                                    <h4 class="font-bold text-brand-dark">{nivel.name}</h4>
-                                    <p class="text-sm text-gray-500">{nivel.desc}</p>
+                        {
+                            niveles.map((nivel) => (
+                                <div class="flex items-start gap-4 p-4 rounded-xl border border-gray-100/50 hover:border-primary/20 hover:bg-brand-light/10 transition-all">
+                                    <Icon
+                                        name="lucide:chevron-right"
+                                        class="h-5 w-5 text-primary shrink-0 mt-0.5"
+                                    />
+                                    <div>
+                                        <h4 class="font-bold text-brand-dark text-base">
+                                            {nivel.name}
+                                        </h4>
+                                        <p class="text-sm text-gray-500">
+                                            {nivel.desc}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))
+                        }
                     </div>
                 </div>
 
                 <div class="space-y-8">
                     <div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-6 flex items-center gap-2">
-                            <i class="fas fa-clock text-primary"></i> Horarios Académicos
+                        <h3
+                            class="text-xl font-bold text-brand-dark mb-6 flex items-center gap-3"
+                        >
+                            <Icon
+                                name="lucide:clock"
+                                class="h-6 w-6 text-primary"
+                            /> Horarios Académicos
                         </h3>
                         <ScheduleTable />
                     </div>
 
                     <div class="p-6 bg-brand-dark rounded-2xl text-white">
-                        <h4 class="font-bold text-primary mb-4">Modelos Flexibles</h4>
-                        <ul class="space-y-2 text-sm text-gray-400">
-                            <li>• Procesos Básicos y Aceleración del Aprendizaje</li>
-                            <li>• Programa Caminar a la Secundaria</li>
+                        <h4 class="font-bold text-sky-400 mb-4 text-base">
+                            Modelos Flexibles
+                        </h4>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex gap-2">
+                                <Icon
+                                    name="lucide:check"
+                                    class="h-4 w-4 text-sky-300 shrink-0"
+                                />
+                                Procesos Básicos y Aceleración del Aprendizaje
+                            </li>
+                            <li class="flex gap-2">
+                                <Icon
+                                    name="lucide:check"
+                                    class="h-4 w-4 text-sky-300 shrink-0"
+                                />
+                                Programa Caminar a la Secundaria
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -66,17 +110,30 @@ const proyectos = [
         <!-- Proyectos -->
         <section class="bg-gray-50 py-20" id="proyectos">
             <div class="container mx-auto px-4 lg:px-8">
-                <SectionHeader subtitle="Institucional" title="Nuestros Proyectos" className="text-center mx-auto" />
+                <SectionHeader
+                    subtitle="Institucional"
+                    title="Nuestros Proyectos"
+                    className="text-center mx-auto"
+                />
                 <div class="grid gap-8 md:grid-cols-3">
-                    {proyectos.map(proyecto => (
-                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all text-center">
-                            <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6">
-                                <i class={`${proyecto.icon} text-2xl text-primary`}></i>
+                    {
+                        proyectos.map((proyecto) => (
+                            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all text-center group">
+                                <div class="w-16 h-16 bg-brand-light rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                                    <Icon
+                                        name={proyecto.icon}
+                                        class="h-8 w-8 text-primary group-hover:text-white transition-colors"
+                                    />
+                                </div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-2">
+                                    {proyecto.name}
+                                </h4>
+                                <p class="text-base text-gray-600 leading-relaxed">
+                                    {proyecto.desc}
+                                </p>
                             </div>
-                            <h4 class="text-xl font-bold text-brand-dark mb-2">{proyecto.name}</h4>
-                            <p class="text-sm text-gray-500">{proyecto.desc}</p>
-                        </div>
-                    ))}
+                        ))
+                    }
                 </div>
             </div>
         </section>

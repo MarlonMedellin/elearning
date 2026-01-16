@@ -1,0 +1,162 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const images = [
+    {
+        src: "/img/gallery/banner_01.jpg",
+        alt: "Instalaciones de la Institución",
+    },
+    { src: "/img/gallery/banner_02.jpg", alt: "Evento Escolar" },
+    { src: "/img/gallery/banner_03.jpg", alt: "Actividad Académica" },
+    { src: "/img/gallery/banner_04.jpg", alt: "Deportes y Recreación" },
+    { src: "/img/gallery/carousel-1.jpg", alt: "Estudiantes en Clase" },
+    { src: "/img/gallery/carousel-2.jpg", alt: "Proyecto Institucional" },
+    { src: "/img/gallery/carousel-3.jpg", alt: "Celebración Institucional" },
+    { src: "/img/gallery/carousel-4.jpg", alt: "Laboratorio" },
+    { src: "/img/gallery/carousel-5.jpg", alt: "Biblioteca" },
+];
+---
+
+<MainLayout title="Galería de Imágenes">
+    <Navbar />
+    <PageHeader title="Galería de Imágenes" />
+
+    <main class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Section Intro -->
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">
+                    Nuestra Vida Institucional
+                </h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Explora los momentos más significativos de nuestra comunidad
+                    educativa a través de esta galería visual.
+                </p>
+            </div>
+
+            <!-- Swiper Slider -->
+            <div
+                class="swiper mySwiper rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-100"
+            >
+                <div class="swiper-wrapper">
+                    {
+                        images.map((img) => (
+                            <div class="swiper-slide relative aspect-video">
+                                <img
+                                    src={img.src}
+                                    alt={img.alt}
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8">
+                                    <p class="text-white text-lg font-medium">
+                                        {img.alt}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div
+                    class="swiper-button-next !text-white !after:text-2xl h-12 w-12 bg-primary/80 hover:bg-primary rounded-full transition-colors"
+                >
+                </div>
+                <div
+                    class="swiper-button-prev !text-white !after:text-2xl h-12 w-12 bg-primary/80 hover:bg-primary rounded-full transition-colors"
+                >
+                </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination !bottom-6"></div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</MainLayout>
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<style is:global>
+    :root {
+        --swiper-theme-color: #003366;
+        --swiper-navigation-size: 24px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        opacity: 0.6;
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        width: 25px;
+        border-radius: 5px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
+</style>
+
+<script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script is:inline>
+    document.addEventListener("astro:page-load", () => {
+        new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            effect: "fade",
+            fadeEffect: {
+                crossFade: true,
+            },
+            grabCursor: true,
+        });
+    });
+
+    // Fallback for non-transition loads
+    new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true,
+        },
+    });
+</script>

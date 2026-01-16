@@ -1,69 +1,86 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
 const profiles = [
   {
-    icon: 'lucide:user',
-    name: 'Estudiante',
+    icon: "lucide:user",
+    name: "Estudiante",
     tasks: [
-      'Respetuoso de la diferencia y del entorno.',
-      'Responsable, reflexivo y con sentido crítico.',
-      'Promueve la convivencia y el cuidado ambiental.'
-    ]
+      "Respetuoso de la diferencia y del entorno.",
+      "Responsable, reflexivo y con sentido crítico.",
+      "Promueve la convivencia y el cuidado ambiental.",
+    ],
   },
   {
-    icon: 'lucide:users',
-    name: 'Familia',
+    icon: "lucide:users",
+    name: "Familia",
     tasks: [
-      'Participa activamente en la educación.',
-      'Conoce y respeta el Manual de Convivencia.',
-      'Mantiene comunicación constante con la institución.'
-    ]
+      "Participa activamente en la educación.",
+      "Conoce y respeta el Manual de Convivencia.",
+      "Mantiene comunicación constante con la institución.",
+    ],
   },
   {
-    icon: 'lucide:graduation-cap',
-    name: 'Docente',
+    icon: "lucide:graduation-cap",
+    name: "Docente",
     tasks: [
-      'Modelo ético y pedagógico.',
-      'Promueve liderazgo, innovación y trabajo colaborativo.',
-      'Se actualiza continuamente para mejorar calidad.'
-    ]
+      "Modelo ético y pedagógico.",
+      "Promueve liderazgo, innovación y trabajo colaborativo.",
+      "Se actualiza continuamente para mejorar calidad.",
+    ],
   },
   {
-    icon: 'lucide:briefcase',
-    name: 'Directivo Docente',
+    icon: "lucide:briefcase",
+    name: "Directivo Docente",
     tasks: [
-      'Liderazgo humano, democrático y participativo.',
-      'Fomenta relaciones respetuosas y horizontales.'
-    ]
-  }
+      "Liderazgo humano, democrático y participativo.",
+      "Fomenta relaciones respetuosas y horizontales.",
+    ],
+  },
 ];
 ---
 
 <section class="py-24 bg-brand-light/10" id="perfiles">
-    <div class="container mx-auto px-4 lg:px-8">
-        <div class="text-center mb-20 max-w-3xl mx-auto">
-            <h2 class="text-4xl lg:text-5xl font-black text-brand-dark mb-6 tracking-tight">Perfiles Institucionales</h2>
-            <p class="text-gray-500 text-lg font-medium">Nuestra comunidad educativa se fundamenta en roles claros y comprometidos con la excelencia y el desarrollo humano.</p>
-        </div>
-
-        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {profiles.map((profile) => (
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group border border-gray-100">
-                    <div class="w-16 h-16 bg-brand-light rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-all duration-500 rotate-3 group-hover:rotate-0">
-                        <Icon name={profile.icon} class="h-8 w-8 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <h3 class="text-2xl font-bold text-brand-dark mb-5 tracking-tight">{profile.name}</h3>
-                    <ul class="space-y-4">
-                        {profile.tasks.map((task) => (
-                            <li class="text-sm text-gray-500 flex gap-3 leading-relaxed">
-                                <Icon name="lucide:check-circle-2" class="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                                {task}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
-        </div>
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="text-center mb-20 max-w-3xl mx-auto">
+      <h2
+        class="text-4xl lg:text-5xl font-black text-brand-dark mb-6 tracking-tight"
+      >
+        Perfiles Institucionales
+      </h2>
+      <p class="text-gray-500 text-lg font-medium">
+        Nuestra comunidad educativa se fundamenta en roles claros y
+        comprometidos con la excelencia y el desarrollo humano.
+      </p>
     </div>
+
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        profiles.map((profile) => (
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group border border-gray-100">
+            <div class="w-16 h-16 bg-brand-light rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-all duration-500 rotate-3 group-hover:rotate-0">
+              <Icon
+                name={profile.icon}
+                class="h-8 w-8 text-primary group-hover:text-white transition-colors"
+              />
+            </div>
+            <h3 class="text-2xl font-bold text-brand-dark mb-5 tracking-tight">
+              {profile.name}
+            </h3>
+            <ul class="space-y-4">
+              {profile.tasks.map((task) => (
+                <li class="text-base text-gray-500 flex gap-3 leading-relaxed">
+                  <Icon
+                    name="lucide:check-circle-2"
+                    class="h-5 w-5 text-primary shrink-0 mt-0.5"
+                  />
+                  {task}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </section>
