@@ -1,0 +1,9 @@
+# <type>(<scope>): <summary>
+#
+# Types: feat, fix, style, seo, perf, refactor, docs, test, chore, ci
+# Scope: navbar, footer, fonts, a11y, robots, etc.
+# Summary: max 72 chars, imperative mood, no period
+#
+# Example: feat(navbar): add mobile menu toggle functionality
+#
+# More info: see CONTRIBUTING.md
