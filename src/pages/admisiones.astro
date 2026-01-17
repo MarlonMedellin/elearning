@@ -45,171 +45,367 @@ const uniformeNinos = [
     "Medias negras o azul oscuro (no tobilleras).",
     "Zapatos totalmente negros de amarrar.",
 ];
+
+const uniformeFisica = [
+    "Camiseta blanca con cuello y escudo oficial.",
+    "Sudadera azul con las iniciales de la institución.",
+    "Tenis completamente blancos o completamente negros.",
+    "Medias blancas, negras o azul oscuro (no tobilleras).",
+];
 ---
 
 <MainLayout title="Admisiones">
     <Navbar />
     <PageHeader title="Admisiones" />
 
-    <main class="space-y-20 pb-20">
-        <!-- Inscripción -->
-        <section class="container mx-auto px-4 lg:px-8" id="cupos">
-            <SectionHeader
-                subtitle="Inscripción"
-                title="Inscripción y Cupos Disponibles"
-            />
-            <div class="grid gap-8 lg:grid-cols-2">
-                <Card>
-                    <h3
-                        class="text-xl font-bold text-primary mb-6 flex items-center gap-2"
-                    >
-                        <Icon name="lucide:clipboard-list" class="icon-md" /> Requisitos
-                    </h3>
-                    <ul class="space-y-4">
+    <main class="space-y-24 pb-24">
+        <!-- SECCIÓN 1: Inscripción y Cupos Disponibles -->
+        <section class="container mx-auto px-4 lg:px-8 mt-12" id="cupos">
+            <div class="mb-10">
+                <span
+                    class="inline-block px-3 py-1 bg-primary/10 text-primary font-bold text-xs tracking-widest uppercase rounded mb-4"
+                    >Inscripción</span
+                >
+                <h2 class="text-4xl font-black text-brand-dark">
+                    Inscripción y Cupos Disponibles
+                </h2>
+            </div>
+
+            <div class="space-y-8">
+                <Card variant="white" class="border-t-4 border-t-primary">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-brand-light/20 rounded-lg">
+                            <Icon
+                                name="lucide:clipboard-list"
+                                class="h-6 w-6 text-primary"
+                            />
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark">
+                            Requisitos de Inscripción
+                        </h3>
+                    </div>
+
+                    <ul class="grid gap-3 mb-8">
                         {
                             inscripcionRequisitos.map((item) => (
-                                <li class="text-gray-600 flex gap-3">
-                                    <Icon
-                                        name="lucide:circle-check"
-                                        class="text-primary h-5 w-5 shrink-0 mt-0.5"
-                                    />{" "}
-                                    <span class="text-base">{item}</span>
+                                <li class="flex gap-3 text-gray-600">
+                                    <span class="text-primary">•</span>
+                                    <span>{item}</span>
                                 </li>
                             ))
                         }
                     </ul>
-                    <div
-                        class="mt-8 p-6 bg-brand-light/30 rounded-2xl border border-brand-light"
-                    >
-                        <h4 class="font-bold text-brand-dark mb-2">Entrega</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            En carpeta manila rotulada. Documentos originales el
-                            día de la matrícula. Diligenciar con lapicero negro.
-                        </p>
+
+                    <div class="space-y-6 border-t border-gray-100 pt-6">
+                        <div>
+                            <span
+                                class="inline-block px-3 py-1 bg-gray-200 text-brand-dark font-bold text-sm rounded mb-3"
+                                >Entrega</span
+                            >
+                            <ul class="space-y-2">
+                                <li class="flex gap-3 text-gray-600 text-sm">
+                                    <span class="text-primary">•</span>
+                                    En carpeta manila rotulada con nombre completo
+                                    y grado solicitado.
+                                </li>
+                                <li class="flex gap-3 text-gray-600 text-sm">
+                                    <span class="text-primary">•</span>
+                                    Documentos originales se presentan el día de la
+                                    matrícula.
+                                </li>
+                                <li class="flex gap-3 text-gray-600 text-sm">
+                                    <span class="text-primary">•</span>
+                                    Los documentos deben ser diligenciados con lapicero
+                                    color negro.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-brand-dark mb-2">
+                                Importante
+                            </h4>
+                            <p class="text-sm text-gray-600 flex gap-3">
+                                <span class="text-primary">•</span>
+                                Inscripción válida solo con documentos completos y
+                                legibles.
+                            </p>
+                        </div>
                     </div>
                 </Card>
-                <Card variant="light" hover={false}>
-                    <h3
-                        class="text-xl font-bold text-primary mb-6 flex items-center gap-2"
-                    >
-                        <Icon name="lucide:user-check" class="icon-md" /> Estudiantes
-                        Aceptados
-                    </h3>
-                    <p class="text-gray-600 leading-relaxed text-base">
+
+                <Card variant="white" class="border-t-4 border-t-secondary">
+                    <div class="flex items-center gap-3 mb-4">
+                        <Icon
+                            name="lucide:user-check"
+                            class="h-6 w-6 text-secondary"
+                        />
+                        <h3 class="text-xl font-bold text-brand-dark">
+                            Publicación de Estudiantes Aceptados
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
                         Una vez verificada la documentación, se publicará el
-                        listado oficial según cupos disponibles. El listado
-                        estará disponible en PDF en esta sección o fijado en la
-                        institución.
+                        listado oficial de aceptados según los cupos
+                        disponibles. El listado estará disponible en formato PDF
+                        en esta sección del sitio web o fijado a la entrada de
+                        la institución o será anunciado por los canales
+                        institucionales oficiales.
                     </p>
                 </Card>
             </div>
         </section>
 
-        <!-- Matrícula -->
+        <!-- SECCIÓN 2: Matrícula -->
         <section class="bg-gray-50 py-24" id="matricula">
             <div class="container mx-auto px-4 lg:px-8">
-                <SectionHeader subtitle="Proceso" title="Matrícula" />
-                <div class="grid gap-8 lg:grid-cols-2">
+                <div class="mb-10">
+                    <span
+                        class="inline-block px-3 py-1 bg-primary/10 text-primary font-bold text-xs tracking-widest uppercase rounded mb-4"
+                        >Proceso</span
+                    >
+                    <h2 class="text-4xl font-black text-brand-dark">
+                        Matrícula
+                    </h2>
+                </div>
+
+                <div class="grid gap-8">
                     <!-- Nuevos -->
-                    <Card>
-                        <h3 class="text-xl font-bold text-primary mb-6">
-                            Estudiantes Nuevos
-                        </h3>
-                        <ul class="space-y-3 mb-8">
+                    <Card variant="white" class="border-t-4 border-t-primary">
+                        <div class="flex items-center gap-3 mb-6">
+                            <Icon
+                                name="lucide:file-text"
+                                class="h-6 w-6 text-primary"
+                            />
+                            <h3 class="text-xl font-bold text-brand-dark">
+                                Estudiantes Nuevos — Documentos
+                            </h3>
+                        </div>
+                        <ul class="grid gap-3 mb-6">
                             {
                                 matriculaNuevos.map((item) => (
-                                    <li class="text-base text-gray-600 flex gap-2">
-                                        <span class="text-primary">•</span>{" "}
-                                        {item}
+                                    <li class="flex gap-3 text-gray-600">
+                                        <span class="text-primary">•</span>
+                                        <span>{item}</span>
                                     </li>
                                 ))
                             }
                         </ul>
-                        <p class="text-xs text-gray-400 italic">
-                            Trámite presencial por padre/madre.
-                        </p>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h4 class="font-bold text-brand-dark mb-3">
+                                Procedimiento
+                            </h4>
+                            <ul class="space-y-2">
+                                <li class="flex gap-3 text-gray-600 text-sm">
+                                    <span class="text-primary">•</span>
+                                    El trámite debe realizarlo padre o madre; si no
+                                    pueden, un acudiente con autorización notariada.
+                                </li>
+                                <li class="flex gap-3 text-gray-600 text-sm">
+                                    <span class="text-primary">•</span>
+                                    La matrícula se formaliza al entregar todos los
+                                    documentos originales.
+                                </li>
+                            </ul>
+                        </div>
                     </Card>
+
                     <!-- Antiguos -->
-                    <Card>
-                        <h3 class="text-xl font-bold text-primary mb-6">
-                            Estudiantes Antiguos
-                        </h3>
-                        <ul class="space-y-3 mb-8">
+                    <Card variant="white" class="border-t-4 border-t-secondary">
+                        <div class="flex items-center gap-3 mb-6">
+                            <Icon
+                                name="lucide:users"
+                                class="h-6 w-6 text-secondary"
+                            />
+                            <h3 class="text-xl font-bold text-brand-dark">
+                                Estudiantes Antiguos — Proceso
+                            </h3>
+                        </div>
+                        <ul class="grid gap-3 mb-6">
                             {
                                 matriculaAntiguos.map((item) => (
-                                    <li class="text-base text-gray-600 flex gap-2">
-                                        <span class="text-primary">•</span>{" "}
-                                        {item}
+                                    <li class="flex gap-3 text-gray-600">
+                                        <span class="text-primary">•</span>
+                                        <span>{item}</span>
                                     </li>
                                 ))
                             }
                         </ul>
-                        <p class="text-xs text-gray-400 italic">
-                            Renovación anual obligatoria.
-                        </p>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h4 class="font-bold text-brand-dark mb-3">
+                                Procedimiento
+                            </h4>
+                            <ul class="space-y-2">
+                                <li class="flex gap-3 text-gray-600 text-sm">
+                                    <span class="text-primary">•</span>
+                                    Renovación a cargo del padre, madre o acudiente
+                                    autorizado por notaría del año anterior; si no
+                                    pueden, un acudiente con autorización notariada.
+                                </li>
+                                <li class="flex gap-3 text-gray-600 text-sm">
+                                    <span class="text-primary">•</span>
+                                    Requiere autorización autenticada si no asisten
+                                    los padres.
+                                </li>
+                            </ul>
+                        </div>
                     </Card>
                 </div>
             </div>
         </section>
 
-        <!-- Uniformes -->
+        <!-- SECCIÓN 3: Uniformes -->
         <section class="container mx-auto px-4 lg:px-8" id="uniformes">
-            <SectionHeader
-                subtitle="Uniformes"
-                title="Manual de Convivencia: Presentación"
-            />
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <Card padding="md">
-                    <h4
-                        class="font-bold text-primary mb-6 flex items-center gap-2"
-                    >
-                        <Icon name="lucide:shirt" class="icon-md" /> Niñas / Jóvenes
-                    </h4>
-                    <ul class="text-base space-y-3 text-gray-600">
+            <div class="mb-12">
+                <h2 class="text-4xl font-black text-brand-dark mb-4">
+                    Uniformes de la IE Capilla del Rosario
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Presentación personal: cada estudiante debe contar con los
+                    dos uniformes institucionales (Gala y Educación Física) y
+                    usarlos de acuerdo con el horario establecido.
+                </p>
+            </div>
+
+            <div class="grid gap-8">
+                <!-- Diario Niñas -->
+                <Card variant="white" class="border-t-4 border-t-primary">
+                    <div class="flex items-center gap-3 mb-6">
+                        <Icon
+                            name="lucide:shirt"
+                            class="h-6 w-6 text-primary"
+                        />
+                        <h3 class="text-xl font-bold text-brand-dark">
+                            Uniforme diario para niñas y jóvenes
+                        </h3>
+                    </div>
+                    <ul class="grid gap-3">
                         {
                             uniformeNinas.map((item) => (
-                                <li class="flex gap-2">
-                                    <span class="text-primary">•</span> {item}
+                                <li class="flex gap-3 text-gray-600">
+                                    <span class="text-primary">•</span>
+                                    <span>{item}</span>
                                 </li>
                             ))
                         }
                     </ul>
                 </Card>
-                <Card padding="md">
-                    <h4
-                        class="font-bold text-primary mb-6 flex items-center gap-2"
-                    >
-                        <Icon name="lucide:shirt" class="icon-md" /> Niños / Jóvenes
-                    </h4>
-                    <ul class="text-base space-y-3 text-gray-600">
+
+                <!-- Diario Niños -->
+                <Card variant="white" class="border-t-4 border-t-primary">
+                    <div class="flex items-center gap-3 mb-6">
+                        <Icon
+                            name="lucide:shirt"
+                            class="h-6 w-6 text-primary"
+                        />
+                        <h3 class="text-xl font-bold text-brand-dark">
+                            Uniforme diario para niños y jóvenes
+                        </h3>
+                    </div>
+                    <ul class="grid gap-3">
                         {
                             uniformeNinos.map((item) => (
-                                <li class="flex gap-2">
-                                    <span class="text-primary">•</span> {item}
+                                <li class="flex gap-3 text-gray-600">
+                                    <span class="text-primary">•</span>
+                                    <span>{item}</span>
                                 </li>
                             ))
                         }
                     </ul>
                 </Card>
-                <Card variant="dark" padding="md">
-                    <h4
-                        class="font-bold text-sky-400 mb-6 flex items-center gap-2"
-                    >
-                        <Icon name="lucide:pipette" class="icon-md" /> Ed. Física
-                    </h4>
-                    <p class="text-base text-gray-300 leading-relaxed mb-6">
-                        Camiseta blanca, sudadera azul institucional, tenis
-                        blancos o negros.
-                    </p>
+
+                <!-- Educación Física -->
+                <Card variant="white" class="border-t-4 border-t-secondary">
+                    <div class="flex items-center gap-3 mb-6">
+                        <Icon
+                            name="lucide:activity"
+                            class="h-6 w-6 text-secondary"
+                        />
+                        <h3 class="text-xl font-bold text-brand-dark">
+                            Uniforme de Educación Física
+                        </h3>
+                    </div>
+                    <ul class="grid gap-3">
+                        {
+                            uniformeFisica.map((item) => (
+                                <li class="flex gap-3 text-gray-600">
+                                    <span class="text-primary">•</span>
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </Card>
+
+                <!-- Complementos -->
+                <Card variant="white" class="border-t-4 border-t-brand-dark">
+                    <div class="flex items-center gap-3 mb-6">
+                        <Icon
+                            name="lucide:snowflake"
+                            class="h-6 w-6 text-brand-dark"
+                        />
+                        <h3 class="text-xl font-bold text-brand-dark">
+                            Buso, chaqueta o chompa institucional
+                        </h3>
+                    </div>
+                    <ul class="grid gap-3 mb-6">
+                        <li class="flex gap-3 text-gray-600">
+                            <span class="text-primary">•</span>
+                            Color azul oscuro, sin capucha y del mismo material de
+                            la sudadera.
+                        </li>
+                        <li class="flex gap-3 text-gray-600">
+                            <span class="text-primary">•</span>
+                            Debe llevar el escudo oficial de la institución.
+                        </li>
+                    </ul>
                     <div
-                        class="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl text-xs text-yellow-500/90"
+                        class="p-4 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 text-sm"
                     >
-                        <strong>Nota:</strong> No se permite el uso de capuchas.
+                        <strong>Nota:</strong> No se permite el uso de capuchas durante
+                        la jornada escolar.
                     </div>
                 </Card>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Consentimiento Informado -->
+        <section class="container mx-auto px-4 lg:px-8" id="documentos">
+            <div class="border-t border-gray-200 pt-24">
+                <div class="mb-8">
+                    <span
+                        class="inline-block px-3 py-1 bg-secondary/10 text-secondary font-bold text-xs tracking-widest uppercase rounded mb-4"
+                        >Documentos</span
+                    >
+                    <h2 class="text-4xl font-black text-brand-dark">
+                        Consentimiento Informado
+                    </h2>
+                </div>
+
+                <p class="text-gray-600 text-lg mb-8 max-w-4xl">
+                    El presente documento corresponde al Consentimiento
+                    Informado de la Institución Educativa Capilla del Rosario,
+                    socializado ante la comunidad educativa. Quienes no estén de
+                    acuerdo deben comunicarse directamente con el Rector.
+                </p>
+
+                <a
+                    href="#"
+                    class="inline-flex items-center gap-2 bg-secondary text-white font-bold py-4 px-8 rounded-xl hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/20"
+                >
+                    <Icon name="lucide:file-down" class="h-5 w-5" />
+                    Consentimiento informado
+                </a>
             </div>
         </section>
     </main>
 
     <Footer />
 </MainLayout>
+
+<style>
+    /* Aseguramos que los iconos tengan el tamaño correcto si no se pasan por clase */
+    [data-astro-icon] {
+        flex-shrink: 0;
+    }
+</style>

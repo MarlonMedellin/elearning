@@ -9,8 +9,8 @@ import Card from "../components/ui/Card.astro";
 import { Icon } from "astro-icon/components";
 
 const niveles = [
-    { name: "Jardín", desc: "Nivel de formación inicial." },
-    { name: "Preescolar", desc: "Nivel de formación inicial." },
+    { name: "Jardín", desc: "Formación inicial." },
+    { name: "Preescolar", desc: "Formación inicial." },
     { name: "Básica Primaria", desc: "Grados 1.º a 5.º." },
     { name: "Básica Secundaria", desc: "Grados 6.º a 9.º." },
     { name: "Media Técnica (Comercio)", desc: "Grados 10.º y 11.º." },
@@ -39,84 +39,157 @@ const proyectos = [
     <Navbar />
     <PageHeader title="Vida Institucional" />
 
-    <main class="space-y-20 pb-20">
-        <!-- Oferta Académica -->
-        <section class="container mx-auto px-4 lg:px-8" id="jornadas">
-            <div class="grid gap-12 lg:grid-cols-2">
-                <div>
-                    <SectionHeader
-                        subtitle="Oferta"
-                        title="Jornadas y Niveles"
-                    />
-                    <div class="space-y-4">
+    <main class="space-y-24 pb-24">
+        <!-- SECCIÓN 1: Oferta -->
+        <section class="container mx-auto px-4 lg:px-8 mt-12" id="oferta">
+            <div class="mb-12 text-center">
+                <span
+                    class="inline-block px-3 py-1 bg-primary/10 text-primary font-bold text-xs tracking-widest uppercase rounded mb-4"
+                    >Institucional</span
+                >
+                <h2 class="text-4xl font-black text-brand-dark mb-4">Oferta</h2>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-3">
+                <!-- Tarjeta 1: Jornadas y Niveles -->
+                <Card
+                    class="text-center group border-t-4 border-t-transparent hover:border-t-primary transition-all h-full"
+                >
+                    <div
+                        class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-all duration-500 rotate-3 group-hover:rotate-0"
+                    >
+                        <Icon
+                            name="lucide:graduation-cap"
+                            class="text-3xl text-primary group-hover:text-white transition-colors"
+                        />
+                    </div>
+                    <h3
+                        class="text-2xl font-bold text-brand-dark mb-6 tracking-tight"
+                    >
+                        Jornadas y Niveles
+                    </h3>
+                    <ul class="space-y-3 text-sm text-left inline-block">
                         {
                             niveles.map((nivel) => (
-                                <div class="flex items-start gap-5 p-5 rounded-2xl border border-transparent hover:border-primary/10 hover:bg-brand-light/20 transition-all group">
-                                    <div class="w-2.5 h-2.5 rounded-full bg-primary mt-2.5 shrink-0 group-hover:scale-125 transition-transform" />
+                                <li class="flex gap-2 text-gray-600">
+                                    <span class="text-primary font-bold">
+                                        •
+                                    </span>
                                     <div>
-                                        <h4 class="font-bold text-brand-dark text-lg mb-1">
-                                            {nivel.name}
-                                        </h4>
-                                        <p class="text-base text-gray-500 leading-relaxed">
+                                        <strong class="text-brand-dark">
+                                            {nivel.name}:
+                                        </strong>
+                                        <span class="text-gray-500">
                                             {nivel.desc}
-                                        </p>
+                                        </span>
                                     </div>
-                                </div>
+                                </li>
                             ))
                         }
-                    </div>
-                </div>
+                    </ul>
+                </Card>
 
-                <div class="space-y-8">
-                    <div>
-                        <h3
-                            class="text-2xl font-black text-brand-dark mb-8 flex items-center gap-3 tracking-tight"
+                <!-- Tarjeta 2: Horarios Académicos -->
+                <Card
+                    class="text-center group border-t-4 border-t-transparent hover:border-t-primary transition-all h-full"
+                    padding="none"
+                >
+                    <div class="p-8 pb-0">
+                        <div
+                            class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-all duration-500 -rotate-3 group-hover:rotate-0"
                         >
                             <Icon
                                 name="lucide:clock"
-                                class="text-primary h-7 w-7"
-                            /> Horarios Académicos
-                        </h3>
-                        <Card
-                            padding="none"
-                            hover={false}
-                            class="overflow-hidden"
+                                class="text-3xl text-primary group-hover:text-white transition-colors"
+                            />
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-brand-dark mb-6 tracking-tight"
                         >
-                            <ScheduleTable />
-                        </Card>
+                            Horarios Académicos
+                        </h3>
                     </div>
+                    <div class="px-2 pb-8 text-left">
+                        <ScheduleTable />
+                    </div>
+                </Card>
 
-                    <Card variant="dark">
-                        <h4 class="font-bold text-sky-400 mb-4 text-xl">
-                            Modelos Flexibles
-                        </h4>
-                        <ul class="space-y-3 text-base text-gray-300">
-                            <li class="flex gap-2">
-                                <span class="text-sky-400">•</span> Procesos Básicos
-                                y Aceleración del Aprendizaje
-                            </li>
-                            <li class="flex gap-2">
-                                <span class="text-sky-400">•</span> Programa Caminar
-                                a la Secundaria
-                            </li>
-                        </ul>
-                    </Card>
-                </div>
+                <!-- Tarjeta 3: Programas y Proyectos -->
+                <Card
+                    class="text-center group border-t-4 border-t-transparent hover:border-t-primary transition-all h-full"
+                >
+                    <div
+                        class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-all duration-500 rotate-3 group-hover:rotate-0"
+                    >
+                        <Icon
+                            name="lucide:drafting-compass"
+                            class="text-3xl text-primary group-hover:text-white transition-colors"
+                        />
+                    </div>
+                    <h3
+                        class="text-2xl font-bold text-brand-dark mb-6 tracking-tight"
+                    >
+                        Programas y Proyectos
+                    </h3>
+                    <ul class="space-y-3 text-sm text-left inline-block">
+                        <li class="flex gap-2 text-gray-600">
+                            <span class="text-primary font-bold">•</span>
+                            <span class="font-bold text-brand-dark"
+                                >Jardín y Preescolar</span
+                            >
+                        </li>
+                        <li class="flex gap-2 text-gray-600">
+                            <span class="text-primary font-bold">•</span>
+                            <span class="font-bold text-brand-dark"
+                                >Básica Primaria y Secundaria</span
+                            >
+                        </li>
+                        <li class="flex gap-2 text-gray-600">
+                            <span class="text-primary font-bold">•</span>
+                            <span class="font-bold text-brand-dark"
+                                >Media Técnica (Comercio)</span
+                            >
+                        </li>
+                        <li class="flex gap-2 text-gray-600">
+                            <span class="text-primary font-bold">•</span>
+                            <div>
+                                <span class="font-bold text-brand-dark"
+                                    >Modelos flexibles:</span
+                                >
+                                <ul
+                                    class="mt-1 space-y-1 ml-3 border-l-2 border-primary/10 pl-3"
+                                >
+                                    <li class="text-xs text-gray-500 italic">
+                                        Procesos Básicos y Aceleración
+                                    </li>
+                                    <li class="text-xs text-gray-500 italic">
+                                        Programa Caminar
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </Card>
             </div>
         </section>
 
-        <!-- Proyectos -->
+        <!-- SECCIÓN 2: Proyectos -->
         <section class="bg-gray-50 py-24" id="proyectos">
             <div class="container mx-auto px-4 lg:px-8">
-                <SectionHeader
-                    subtitle="Institucional"
-                    title="Nuestros Proyectos"
-                    className="text-center mx-auto"
-                />
+                <div class="mb-12 text-center">
+                    <span
+                        class="inline-block px-3 py-1 bg-secondary/10 text-secondary font-bold text-xs tracking-widest uppercase rounded mb-4"
+                        >Institucional</span
+                    >
+                    <h2 class="text-4xl font-black text-brand-dark">
+                        Proyectos
+                    </h2>
+                </div>
+
                 <div class="grid gap-8 md:grid-cols-3">
                     {
                         proyectos.map((proyecto) => (
-                            <Card class="text-center group">
+                            <Card class="text-center group border-t-4 border-t-transparent hover:border-t-primary transition-all">
                                 <div class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-all duration-500 rotate-3 group-hover:rotate-0">
                                     <Icon
                                         name={proyecto.icon}

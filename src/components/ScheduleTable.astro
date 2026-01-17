@@ -1,29 +1,43 @@
 ---
 const schedules = [
-  { level: 'Preescolar', session: 'Mañana', time: '7:00 a.m. – 12:00 p.m.' },
-  { level: 'Básica Primaria', session: 'Mañana', time: '7:00 a.m. – 12:00 p.m.' },
-  { level: 'Secundaria', session: 'Mañana', time: '6:00 a.m. – 12:00 p.m.' },
-  { level: 'Media Técnica', session: 'Tarde', time: '1:00 p.m. – 5:00 p.m.' }
+    { level: "Preescolar", session: "Mañana", time: "7:00 a.m. – 12:00 p.m." },
+    {
+        level: "Básica Primaria",
+        session: "Mañana",
+        time: "7:00 a.m. – 12:00 p.m.",
+    },
+    { level: "Secundaria", session: "Mañana", time: "6:00 a.m. – 12:00 p.m." },
+    { level: "Media Técnica", session: "Tarde", time: "1:00 p.m. – 5:00 p.m." },
 ];
 ---
 
-<div class="overflow-x-auto rounded-xl border border-gray-100 shadow-sm">
-    <table class="w-full text-left text-sm">
-        <thead class="bg-gray-50 text-brand-dark uppercase text-xs font-bold">
+<div
+    class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm bg-white"
+>
+    <table class="w-full text-left text-base">
+        <thead
+            class="bg-brand-light/20 text-brand-dark uppercase text-xs font-bold tracking-wider"
+        >
             <tr>
-                <th class="px-6 py-4">Nivel</th>
-                <th class="px-6 py-4">Jornada</th>
-                <th class="px-6 py-4">Horario</th>
+                <th class="px-8 py-5">Nivel</th>
+                <th class="px-8 py-5">Jornada</th>
+                <th class="px-8 py-5">Horario</th>
             </tr>
         </thead>
-        <tbody class="divide-y divide-gray-100">
-            {schedules.map((item) => (
-                <tr class="hover:bg-brand-light/10 transition-colors">
-                    <td class="px-6 py-4 font-semibold text-brand-dark">{item.level}</td>
-                    <td class="px-6 py-4 text-gray-600">{item.session}</td>
-                    <td class="px-6 py-4 text-primary font-medium">{item.time}</td>
-                </tr>
-            ))}
+        <tbody class="divide-y divide-gray-50">
+            {
+                schedules.map((item) => (
+                    <tr class="hover:bg-brand-light/5 transition-colors group">
+                        <td class="px-8 py-5 font-bold text-brand-dark group-hover:text-primary transition-colors">
+                            {item.level}
+                        </td>
+                        <td class="px-8 py-5 text-gray-600">{item.session}</td>
+                        <td class="px-8 py-5 text-primary font-bold">
+                            {item.time}
+                        </td>
+                    </tr>
+                ))
+            }
         </tbody>
     </table>
 </div>
