@@ -1,10 +1,11 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import PageHeader from '../components/PageHeader.astro';
-import SectionHeader from '../components/SectionHeader.astro';
-import CircularsTable from '../components/CircularsTable.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import PageHeader from "../components/PageHeader.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import CircularsTable from "../components/CircularsTable.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout title="Comunicaciones">
@@ -13,17 +14,29 @@ import CircularsTable from '../components/CircularsTable.astro';
 
     <main class="py-20">
         <section class="container mx-auto px-4 lg:px-8">
-            <SectionHeader subtitle="Institucional" title="Circulares Oficiales" />
+            <SectionHeader
+                subtitle="Institucional"
+                title="Circulares Oficiales"
+            />
             <div class="mt-8">
                 <CircularsTable />
             </div>
-            
-            <div class="mt-20 p-8 bg-gray-50 rounded-2xl border border-gray-100">
-                <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
-                    <i class="fas fa-info-circle text-primary"></i> Información Importante
+
+            <div
+                class="mt-20 p-8 bg-gray-50 rounded-2xl border border-gray-100"
+            >
+                <h3
+                    class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2"
+                >
+                    <Icon name="lucide:info" class="text-primary h-6 w-6" /> Información
+                    Importante
                 </h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Las circulares son publicadas mensualmente para mantener informada a la comunidad educativa sobre procesos académicos, convivenciales y administrativos. Si tiene dificultades para visualizar algún documento, por favor comuníquese con la secretaría institucional.
+                <p class="text-gray-600 text-base leading-relaxed">
+                    Las circulares son publicadas mensualmente para mantener
+                    informada a la comunidad educativa sobre procesos
+                    académicos, convivenciales y administrativos. Si tiene
+                    dificultades para visualizar algún documento, por favor
+                    comuníquese con la secretaría institucional.
                 </p>
             </div>
         </section>
