@@ -9,12 +9,12 @@ const { subtitle, title, className = "" } = Astro.props;
 ---
 
 <div class={`mb-12 ${className}`}>
-  <h6
+  <div
     class="inline-flex items-center gap-2 bg-brand-light text-primary font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider text-xs border border-primary/10"
   >
     <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
     {subtitle}
-  </h6>
+  </div>
   <h2 class="text-4xl lg:text-5xl font-black text-brand-dark tracking-tight">
     {title}
   </h2>
