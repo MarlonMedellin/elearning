@@ -1,3 +1,4 @@
+# SEO: Clean configuration to resolve legacy Content-Signal errors
 User-agent: *
 Allow: /
 
