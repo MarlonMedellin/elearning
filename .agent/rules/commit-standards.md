@@ -21,6 +21,7 @@ Si el texto original es ambiguo, interprétalo y mejora la claridad técnica.
 Devuelve SOLO el mensaje final del commit.
 
 ## Types permitidos:
+
 - `feat`: Nueva funcionalidad
 - `fix`: Corrección de bugs
 - `style`: Cambios visuales/CSS
@@ -33,6 +34,7 @@ Devuelve SOLO el mensaje final del commit.
 - `ci`: Integración continua
 
 ## Ejemplos:
+
 - `feat(navbar): add mobile menu toggle functionality`
 - `fix(footer): improve contrast ratio for accessibility`
 - `seo(robots): add clean robots.txt configuration`

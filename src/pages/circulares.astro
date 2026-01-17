@@ -9,38 +9,31 @@ import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout title="Comunicaciones">
-    <Navbar />
-    <PageHeader title="Comunicaciones" />
+  <Navbar />
+  <PageHeader title="Comunicaciones" />
 
-    <main class="py-20">
-        <section class="container mx-auto px-4 lg:px-8">
-            <SectionHeader
-                subtitle="Institucional"
-                title="Circulares Oficiales"
-            />
-            <div class="mt-8">
-                <CircularsTable />
-            </div>
+  <main class="py-20">
+    <section class="container mx-auto px-4 lg:px-8">
+      <SectionHeader subtitle="Institucional" title="Circulares Oficiales" />
+      <div class="mt-8">
+        <CircularsTable />
+      </div>
 
-            <div
-                class="mt-20 p-8 bg-gray-50 rounded-2xl border border-gray-100"
-            >
-                <h3
-                    class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2"
-                >
-                    <Icon name="lucide:info" class="text-primary h-6 w-6" /> Información
-                    Importante
-                </h3>
-                <p class="text-gray-600 text-base leading-relaxed">
-                    Las circulares son publicadas mensualmente para mantener
-                    informada a la comunidad educativa sobre procesos
-                    académicos, convivenciales y administrativos. Si tiene
-                    dificultades para visualizar algún documento, por favor
-                    comuníquese con la secretaría institucional.
-                </p>
-            </div>
-        </section>
-    </main>
+      <div class="mt-20 p-8 bg-gray-50 rounded-2xl border border-gray-100">
+        <h3
+          class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2"
+        >
+          <Icon name="lucide:info" class="text-primary h-6 w-6" /> Información Importante
+        </h3>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Las circulares son publicadas mensualmente para mantener informada a
+          la comunidad educativa sobre procesos académicos, convivenciales y
+          administrativos. Si tiene dificultades para visualizar algún
+          documento, por favor comuníquese con la secretaría institucional.
+        </p>
+      </div>
+    </section>
+  </main>
 
-    <Footer />
+  <Footer />
 </MainLayout>

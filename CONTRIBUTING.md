@@ -21,18 +21,18 @@ Este proyecto sigue la especificación **[Conventional Commits](https://www.conv
 
 ### Types
 
-| Type | Descripción | Ejemplo |
-|------|-------------|---------|
-| `feat` | Nueva funcionalidad | `feat(navbar): add mobile menu toggle` |
-| `fix` | Corrección de bugs | `fix(footer): resolve contrast ratio issue` |
-| `style` | Cambios visuales/CSS | `style(header): apply semantic heading hierarchy` |
-| `seo` | Mejoras de SEO | `seo(robots): add clean robots.txt configuration` |
-| `perf` | Mejoras de rendimiento | `perf(fonts): self-host fonts to eliminate blocking` |
-| `refactor` | Refactorización | `refactor(components): extract Card component` |
-| `docs` | Documentación | `docs(readme): update installation instructions` |
-| `test` | Tests | `test(navbar): add mobile menu integration tests` |
-| `chore` | Tareas de mantenimiento | `chore(deps): update astro to v5.16.9` |
-| `ci` | Integración continua | `ci(github): add automated deployment workflow` |
+| Type       | Descripción             | Ejemplo                                              |
+| ---------- | ----------------------- | ---------------------------------------------------- |
+| `feat`     | Nueva funcionalidad     | `feat(navbar): add mobile menu toggle`               |
+| `fix`      | Corrección de bugs      | `fix(footer): resolve contrast ratio issue`          |
+| `style`    | Cambios visuales/CSS    | `style(header): apply semantic heading hierarchy`    |
+| `seo`      | Mejoras de SEO          | `seo(robots): add clean robots.txt configuration`    |
+| `perf`     | Mejoras de rendimiento  | `perf(fonts): self-host fonts to eliminate blocking` |
+| `refactor` | Refactorización         | `refactor(components): extract Card component`       |
+| `docs`     | Documentación           | `docs(readme): update installation instructions`     |
+| `test`     | Tests                   | `test(navbar): add mobile menu integration tests`    |
+| `chore`    | Tareas de mantenimiento | `chore(deps): update astro to v5.16.9`               |
+| `ci`       | Integración continua    | `ci(github): add automated deployment workflow`      |
 
 ### Scopes Comunes
 

@@ -11,6 +11,7 @@ Plataforma educativa de alto rendimiento diseñada para la **Institución Educat
 [![SEO Optimized](https://img.shields.io/badge/SEO-91%2F100-blue?style=for-the-badge)](https://lacapilla.edu.co/sitemap-index.xml)
 [![Accessibility](https://img.shields.io/badge/Accessibility-100%25-brightgreen?style=for-the-badge)](https://iecapilladelrosario.edu.co/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Code Style: Prettier](https://img.shields.io/badge/Code_Style-Prettier-ff69b4?style=for-the-badge&logo=prettier&logoColor=white)](https://prettier.io)
 
 </div>
 
@@ -22,7 +23,7 @@ Plataforma educativa de alto rendimiento diseñada para la **Institución Educat
 - ♿ **100% Accesible**: Cumplimiento de estándares de accesibilidad para una inclusión total.
 - 🎨 **Diseño Premium**: Interfaz moderna, limpia y responsive utilizando Tailwind CSS.
 - 🔍 **SEO de Élite**: Optimización para buscadores con sitemaps automáticos y metadatos dinámicos.
-- 🛠️ **Ingeniería de Calidad**: Repositorio estandarizado con *Conventional Commits* y guías de contribución.
+- 🛠️ **Ingeniería de Calidad**: Repositorio estandarizado con _Conventional Commits_ y guías de contribución.
 
 ## 🛠️ Stack Tecnológico
 
@@ -47,21 +48,23 @@ Plataforma educativa de alto rendimiento diseñada para la **Institución Educat
 
 ## 🚀 Desarrollo y Comandos
 
-| Comando | Acción |
-| :--- | :--- |
-| `npm install` | Instala las dependencias del proyecto |
-| `npm run dev` | Inicia el servidor de desarrollo en `localhost:4321` |
-| `npm run build` | Genera la versión de producción en `./dist/` |
-| `npm run preview` | Previsualiza localmente el build de producción |
+| Comando           | Acción                                               |
+| :---------------- | :--------------------------------------------------- |
+| `npm install`     | Instala las dependencias del proyecto                |
+| `npm run dev`     | Inicia el servidor de desarrollo en `localhost:4321` |
+| `npm run build`   | Genera la versión de producción en `./dist/`         |
+| `npm run preview` | Previsualiza localmente el build de producción       |
 
 ---
 
 ## 👨‍💻 Calidad de Código
 
 Este proyecto mantiene un estándar de desarrollo senior:
+
 - **Commits**: Siguiendo la especificación `type(scope): summary`.
 - **Fuentes**: Auto-alojadas para eliminar recursos que bloquean el renderizado.
 - **Sitemap**: Generación automática bajo el dominio `lacapilla.edu.co`.
 
 ---
+
 Desarrollado con pasión por la excelencia académica y técnica.

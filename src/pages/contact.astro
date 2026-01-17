@@ -9,98 +9,79 @@ import Card from "../components/ui/Card.astro";
 ---
 
 <MainLayout title="Contacto">
-    <Navbar />
-    <PageHeader title="Contacto" />
+  <Navbar />
+  <PageHeader title="Contacto" />
 
-    <main class="py-20 lg:py-32 bg-gray-50/50">
-        <section class="container mx-auto px-4 lg:px-8">
-            <SectionHeader
-                subtitle="Contacto"
-                title="Ubicación y datos de Contacto"
-                className="text-center mx-auto mb-16 lg:mb-24"
-            />
+  <main class="py-20 lg:py-32 bg-gray-50/50">
+    <section class="container mx-auto px-4 lg:px-8">
+      <SectionHeader
+        subtitle="Contacto"
+        title="Ubicación y datos de Contacto"
+        className="text-center mx-auto mb-16 lg:mb-24"
+      />
 
-            <div class="grid gap-8 lg:grid-cols-2 max-w-7xl mx-auto">
-                <!-- Info Column -->
-                <div class="space-y-8">
-                    <Card class="h-full">
-                        <h3
-                            class="text-2xl font-black text-brand-dark mb-10 tracking-tight flex items-center gap-3"
-                        >
-                            <span class="w-2 h-8 bg-primary rounded-full"
-                            ></span>
-                            Información Institucional
-                        </h3>
+      <div class="grid gap-8 lg:grid-cols-2 max-w-7xl mx-auto">
+        <!-- Info Column -->
+        <div class="space-y-8">
+          <Card class="h-full">
+            <h3
+              class="text-2xl font-black text-brand-dark mb-10 tracking-tight flex items-center gap-3"
+            >
+              <span class="w-2 h-8 bg-primary rounded-full"></span>
+              Información Institucional
+            </h3>
 
-                        <ContactInfo />
+            <ContactInfo />
 
-                        <div
-                            class="mt-12 p-8 bg-brand-light/30 rounded-2xl border border-brand-light/50"
-                        >
-                            <h4
-                                class="font-bold text-primary mb-3 flex items-center gap-2"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    ><rect
-                                        x="3"
-                                        y="4"
-                                        width="18"
-                                        height="18"
-                                        rx="2"
-                                        ry="2"></rect><line
-                                        x1="16"
-                                        y1="2"
-                                        x2="16"
-                                        y2="6"></line><line
-                                        x1="8"
-                                        y1="2"
-                                        x2="8"
-                                        y2="6"></line><line
-                                        x1="3"
-                                        y1="10"
-                                        x2="21"
-                                        y2="10"></line></svg
-                                >
-                                Horario de Atención
-                            </h4>
-                            <p
-                                class="text-base text-gray-600 leading-relaxed italic"
-                            >
-                                Lunes a Viernes: 7:00 AM - 12:00 PM / 1:00 PM -
-                                5:00 PM
-                            </p>
-                        </div>
-                    </Card>
-                </div>
-
-                <!-- Map Column -->
-                <div class="h-full min-h-[500px] lg:min-h-full">
-                    <Card
-                        padding="none"
-                        hover={false}
-                        class="h-full overflow-hidden shadow-xl ring-1 ring-black/5"
-                    >
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.773373962767!2d-75.602014!3d6.205102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46820bc9c4392b%3A0x4ea014d88a0f9d57!2sInstituci%C3%B3n%20Educativa%20Capilla%20del%20Rosario!5e0!3m2!1ses!2sco!4v1760889157228!5m2!1ses!2sco"
-                            class="w-full h-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                    </Card>
-                </div>
+            <div
+              class="mt-12 p-8 bg-brand-light/30 rounded-2xl border border-brand-light/50"
+            >
+              <h4 class="font-bold text-primary mb-3 flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><rect x="3" y="4" width="18" height="18" rx="2" ry="2"
+                  ></rect><line x1="16" y1="2" x2="16" y2="6"></line><line
+                    x1="8"
+                    y1="2"
+                    x2="8"
+                    y2="6"></line><line x1="3" y1="10" x2="21" y2="10"
+                  ></line></svg
+                >
+                Horario de Atención
+              </h4>
+              <p class="text-base text-gray-600 leading-relaxed italic">
+                Lunes a Viernes: 7:00 AM - 12:00 PM / 1:00 PM - 5:00 PM
+              </p>
             </div>
-        </section>
-    </main>
+          </Card>
+        </div>
 
-    <Footer />
+        <!-- Map Column -->
+        <div class="h-full min-h-[500px] lg:min-h-full">
+          <Card
+            padding="none"
+            hover={false}
+            class="h-full overflow-hidden shadow-xl ring-1 ring-black/5"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.773373962767!2d-75.602014!3d6.205102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46820bc9c4392b%3A0x4ea014d88a0f9d57!2sInstituci%C3%B3n%20Educativa%20Capilla%20del%20Rosario!5e0!3m2!1ses!2sco!4v1760889157228!5m2!1ses!2sco"
+              class="w-full h-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </Card>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
 </MainLayout>

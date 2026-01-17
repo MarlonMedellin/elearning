@@ -6,69 +6,67 @@ import PageHeader from "../components/PageHeader.astro";
 import Card from "../components/ui/Card.astro";
 
 const images = [
-    {
-        src: "/img/gallery/banner_01.jpg",
-        alt: "Esta es nuestra institución - Bienvenidos",
-    },
-    {
-        src: "/img/gallery/banner_02.jpg",
-        alt: "Formando el futuro con valores",
-    },
-    {
-        src: "/img/gallery/banner_03.jpg",
-        alt: "Excelencia académica y humana",
-    },
-    {
-        src: "/img/gallery/banner_04.jpg",
-        alt: "Espacios para el aprendizaje y la recreación",
-    },
+  {
+    src: "/img/gallery/banner_01.jpg",
+    alt: "Esta es nuestra institución - Bienvenidos",
+  },
+  {
+    src: "/img/gallery/banner_02.jpg",
+    alt: "Formando el futuro con valores",
+  },
+  {
+    src: "/img/gallery/banner_03.jpg",
+    alt: "Excelencia académica y humana",
+  },
+  {
+    src: "/img/gallery/banner_04.jpg",
+    alt: "Espacios para el aprendizaje y la recreación",
+  },
 ];
 ---
 
 <MainLayout title="Galería de Imágenes">
-    <Navbar />
-    <PageHeader title="Galería de Imágenes" />
+  <Navbar />
+  <PageHeader title="Galería de Imágenes" />
 
-    <main class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-8">
-            <!-- Section Intro -->
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2
-                    class="text-3xl font-black text-brand-dark mb-4 tracking-tight"
-                >
-                    Nuestra Vida Institucional
-                </h2>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Explora los momentos más significativos de nuestra comunidad
-                    educativa a través de esta galería visual.
+  <main class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+      <!-- Section Intro -->
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-black text-brand-dark mb-4 tracking-tight">
+          Nuestra Vida Institucional
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Explora los momentos más significativos de nuestra comunidad educativa
+          a través de esta galería visual.
+        </p>
+      </div>
+
+      <!-- Image Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          images.map((img) => (
+            <Card padding="none" class="group overflow-hidden">
+              <div class="aspect-video overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-8">
+                <p class="text-brand-dark font-bold text-lg leading-snug">
+                  {img.alt}
                 </p>
-            </div>
+              </div>
+              <div class="absolute inset-x-0 bottom-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </main>
 
-            <!-- Image Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {
-                    images.map((img) => (
-                        <Card padding="none" class="group overflow-hidden">
-                            <div class="aspect-video overflow-hidden">
-                                <img
-                                    src={img.src}
-                                    alt={img.alt}
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                    loading="lazy"
-                                />
-                            </div>
-                            <div class="p-8">
-                                <p class="text-brand-dark font-bold text-lg leading-snug">
-                                    {img.alt}
-                                </p>
-                            </div>
-                            <div class="absolute inset-x-0 bottom-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                        </Card>
-                    ))
-                }
-            </div>
-        </div>
-    </main>
-
-    <Footer />
+  <Footer />
 </MainLayout>

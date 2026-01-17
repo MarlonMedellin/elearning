@@ -2,46 +2,43 @@
 import { Icon } from "astro-icon/components";
 
 const info = [
-    {
-        icon: "lucide:map-pin",
-        label: "Dirección",
-        value: "Cl. 6 Sur #79-195, Medellín, Antioquia",
-    },
-    { icon: "lucide:phone", label: "Teléfono", value: "604 341 09 14" },
-    {
-        icon: "lucide:mail-open",
-        label: "Correo",
-        values: [
-            "ie.capilladelrosario@yahoo.es",
-            "secretaria@lacapilla.edu.co",
-        ],
-    },
+  {
+    icon: "lucide:map-pin",
+    label: "Dirección",
+    value: "Cl. 6 Sur #79-195, Medellín, Antioquia",
+  },
+  { icon: "lucide:phone", label: "Teléfono", value: "604 341 09 14" },
+  {
+    icon: "lucide:mail-open",
+    label: "Correo",
+    values: ["ie.capilladelrosario@yahoo.es", "secretaria@lacapilla.edu.co"],
+  },
 ];
 ---
 
 <div class="space-y-6">
-    {
-        info.map((item) => (
-            <div class="flex items-center gap-6 group">
-                <div class="w-14 h-14 bg-primary flex items-center justify-center shrink-0 rounded-2xl group-hover:rotate-6 transition-transform">
-                    <Icon name={item.icon} class="text-white text-3xl" />
-                </div>
-                <div>
-                    <h5 class="text-primary font-bold text-lg">{item.label}</h5>
-                    {item.value ? (
-                        <p class="text-gray-600">{item.value}</p>
-                    ) : (
-                        item.values.map((val) => (
-                            <a
-                                href={`mailto:${val}`}
-                                class="block text-gray-600 hover:text-primary transition-colors"
-                            >
-                                {val}
-                            </a>
-                        ))
-                    )}
-                </div>
-            </div>
-        ))
-    }
+  {
+    info.map((item) => (
+      <div class="flex items-center gap-6 group">
+        <div class="w-14 h-14 bg-primary flex items-center justify-center shrink-0 rounded-2xl group-hover:rotate-6 transition-transform">
+          <Icon name={item.icon} class="text-white text-3xl" />
+        </div>
+        <div>
+          <h5 class="text-primary font-bold text-lg">{item.label}</h5>
+          {item.value ? (
+            <p class="text-gray-600">{item.value}</p>
+          ) : (
+            item.values.map((val) => (
+              <a
+                href={`mailto:${val}`}
+                class="block text-gray-600 hover:text-primary transition-colors"
+              >
+                {val}
+              </a>
+            ))
+          )}
+        </div>
+      </div>
+    ))
+  }
 </div>
