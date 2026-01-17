@@ -10,6 +10,7 @@ Plataforma educativa de alto rendimiento diseñada para la **Institución Educat
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?style=for-the-badge&logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 [![SEO Optimized](https://img.shields.io/badge/SEO-91%2F100-blue?style=for-the-badge)](https://lacapilla.edu.co/sitemap-index.xml)
 [![Accessibility](https://img.shields.io/badge/Accessibility-100%25-brightgreen?style=for-the-badge)](https://iecapilladelrosario.edu.co/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 </div>
 
