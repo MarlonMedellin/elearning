@@ -1,43 +1,65 @@
-# Astro Starter Kit: Minimal
+# 🏫 IE Capilla del Rosario - Plataforma Institucional
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Plataforma educativa de alto rendimiento diseñada para la **Institución Educativa Capilla del Rosario**, centrada en la accesibilidad, velocidad y una experiencia de usuario premium.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<div align="center">
 
-## 🚀 Project Structure
+[![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?style=for-the-badge&logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+[![SEO Optimized](https://img.shields.io/badge/SEO-91%2F100-blue?style=for-the-badge)](https://lacapilla.edu.co/sitemap-index.xml)
+[![Accessibility](https://img.shields.io/badge/Accessibility-100%25-brightgreen?style=for-the-badge)](https://iecapilladelrosario.edu.co/)
 
-Inside of your Astro project, you'll see the following folders and files:
+</div>
+
+---
+
+## 🌟 Características Principales
+
+- 🚀 **Ultra Performance**: Arquitectura estática con Astro para tiempos de carga casi instantáneos.
+- ♿ **100% Accesible**: Cumplimiento de estándares de accesibilidad para una inclusión total.
+- 🎨 **Diseño Premium**: Interfaz moderna, limpia y responsive utilizando Tailwind CSS.
+- 🔍 **SEO de Élite**: Optimización para buscadores con sitemaps automáticos y metadatos dinámicos.
+- 🛠️ **Ingeniería de Calidad**: Repositorio estandarizado con *Conventional Commits* y guías de contribución.
+
+## 🛠️ Stack Tecnológico
+
+- **Framework**: [Astro 5](https://astro.build/) (Static Site Generation)
+- **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
+- **Iconografía**: [Lucide Icons](https://lucide.dev/) & [Astro Icon](https://github.com/natemoo-re/astro-icon)
+- **Tipografía**: [Fontsource](https://fontsource.org/) (Heebo & Nunito self-hosted)
+- **Despliegue**: [Cloudflare Pages](https://pages.cloudflare.com/)
+
+## 🏗️ Estructura del Proyecto
 
 ```text
 /
-├── public/
+├── public/          # Recursos estáticos (favicons, robots.txt, imágenes)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/  # Componentes modulares y reutilizables
+│   ├── layouts/     # Plantillas base (MainLayout)
+│   ├── pages/       # Rutas y páginas de la aplicación
+│   └── styles/      # Configuraciones globales de diseño
+└── CONTRIBUTING.md  # Guía de estándares y convenciones
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Desarrollo y Comandos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Comando | Acción |
+| :--- | :--- |
+| `npm install` | Instala las dependencias del proyecto |
+| `npm run dev` | Inicia el servidor de desarrollo en `localhost:4321` |
+| `npm run build` | Genera la versión de producción en `./dist/` |
+| `npm run preview` | Previsualiza localmente el build de producción |
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
+## 👨‍💻 Calidad de Código
 
-All commands are run from the root of the project, from a terminal:
+Este proyecto mantiene un estándar de desarrollo senior:
+- **Commits**: Siguiendo la especificación `type(scope): summary`.
+- **Fuentes**: Auto-alojadas para eliminar recursos que bloquean el renderizado.
+- **Sitemap**: Generación automática bajo el dominio `lacapilla.edu.co`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+Desarrollado con pasión por la excelencia académica y técnica.
