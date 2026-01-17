@@ -1,62 +1,22 @@
----
-import MainLayout from "../layouts/MainLayout.astro";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
-import PageHeader from "../components/PageHeader.astro";
-import SectionHeader from "../components/SectionHeader.astro";
-import ContactInfo from "../components/ContactInfo.astro";
----
+import MainLayout from "../layouts/MainLayout.astro"; import Navbar from
+"../components/Navbar.astro"; import Footer from "../components/Footer.astro";
+import PageHeader from "../components/PageHeader.astro"; import SectionHeader
+from "../components/SectionHeader.astro"; import ContactInfo from
+"../components/ContactInfo.astro"; import Card from
+"../components/ui/Card.astro"
 
-<MainLayout title="Contacto">
-    <Navbar />
-    <PageHeader title="Contacto" />
-
-    <main class="py-20">
-        <section class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-16">
-                <SectionHeader
-                    subtitle="Contacto"
-                    title="Ubicación y datos de Contacto"
-                    className="inline-block"
-                />
-            </div>
-
-            <div class="grid gap-12 lg:grid-cols-12">
-                <div class="lg:col-span-12 wow fadeInUp">
-                    <div class="grid gap-12 lg:grid-cols-2">
-                        <div class="space-y-8">
-                            <h3 class="text-2xl font-bold text-brand-dark mb-8">
-                                Información Institucional
-                            </h3>
-                            <ContactInfo />
-                            <div
-                                class="mt-12 p-8 bg-brand-light/20 rounded-2xl border border-brand-light"
-                            >
-                                <h4 class="font-bold text-primary mb-2">
-                                    Horario de Atención
-                                </h4>
-                                <p class="text-base text-gray-600 italic">
-                                    Lunes a Viernes: 7:00 AM - 12:00 PM / 1:00
-                                    PM - 5:00 PM
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="h-full min-h-[400px]">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.773373962767!2d-75.602014!3d6.205102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46820bc9c4392b%3A0x4ea014d88a0f9d57!2sInstituci%C3%B3n%20Educativa%20Capilla%20del%20Rosario!5e0!3m2!1ses!2sco!4v1760889157228!5m2!1ses!2sco"
-                                class="w-full h-full rounded-2xl border border-gray-100 shadow-sm"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                            ></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <Footer />
-</MainLayout>
+<MainLayout title="Contacto"> <Navbar /> <PageHeader title="Contacto" /> <main
+class="py-20"> <section class="container mx-auto px-4 lg:px-8"> <SectionHeader
+subtitle="Contacto" title="Ubicación y datos de Contacto" className="text-center
+mx-auto mb-16" /> <div class="grid gap-12 lg:grid-cols-2"> <Card> <h3
+class="text-2xl font-black text-brand-dark mb-8 tracking-tight"> Información
+Institucional </h3> <ContactInfo /> <div class="mt-12 p-8 bg-brand-light/30
+rounded-2xl border border-brand-light" > <h4 class="font-bold text-primary
+mb-2"> Horario de Atención </h4> <p class="text-base text-gray-600
+leading-relaxed italic"> Lunes a Viernes: 7:00 AM - 12:00 PM / 1:00 PM - 5:00 PM
+</p> </div> </Card> <Card padding="none" hover={false} class="h-full
+min-h-[400px] overflow-hidden"> <iframe
+src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.773373962767!2d-75.602014!3d6.205102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46820bc9c4392b%3A0x4ea014d88a0f9d57!2sInstituci%C3%B3n%20Educativa%20Capilla%20del%20Rosario!5e0!3m2!1ses!2sco!4v1760889157228!5m2!1ses!2sco"
+class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+referrerpolicy="no-referrer-when-downgrade" ></iframe> </Card> </div> </section>
+</main> <Footer /> </MainLayout>
