@@ -4,6 +4,7 @@ Plataforma educativa de alto rendimiento diseñada para la **Institución Educat
 
 <div align="center">
 
+[![Build Status](https://github.com/MarlonMedellin/elearning/actions/workflows/build.yml/badge.svg)](https://github.com/MarlonMedellin/elearning/actions)
 [![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?style=for-the-badge&logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
