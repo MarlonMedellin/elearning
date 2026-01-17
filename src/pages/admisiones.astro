@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import PageHeader from "../components/PageHeader.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/ui/Card.astro";
 import { Icon } from "astro-icon/components";
 
 const inscripcionRequisitos = [
@@ -58,70 +59,68 @@ const uniformeNinos = [
                 title="Inscripción y Cupos Disponibles"
             />
             <div class="grid gap-8 lg:grid-cols-2">
-                <div
-                    class="p-8 border border-gray-100 rounded-2xl bg-white shadow-sm"
-                >
+                <Card>
                     <h3
-                        class="text-xl font-bold text-primary mb-4 flex items-center gap-2"
+                        class="text-xl font-bold text-primary mb-6 flex items-center gap-2"
                     >
-                        <Icon name="lucide:clipboard-list" class="h-6 w-6" /> Requisitos
+                        <Icon name="lucide:clipboard-list" class="icon-md" /> Requisitos
                     </h3>
-                    <ul class="space-y-3">
+                    <ul class="space-y-4">
                         {
                             inscripcionRequisitos.map((item) => (
-                                <li class="text-gray-600 flex gap-2">
+                                <li class="text-gray-600 flex gap-3">
                                     <Icon
                                         name="lucide:circle-check"
                                         class="text-primary h-5 w-5 shrink-0 mt-0.5"
                                     />{" "}
-                                    <span>{item}</span>
+                                    <span class="text-base">{item}</span>
                                 </li>
                             ))
                         }
                     </ul>
                     <div
-                        class="mt-6 p-4 bg-brand-light/30 rounded-xl border border-brand-light"
+                        class="mt-8 p-6 bg-brand-light/30 rounded-2xl border border-brand-light"
                     >
                         <h4 class="font-bold text-brand-dark mb-2">Entrega</h4>
-                        <p class="text-sm text-gray-600">
+                        <p class="text-sm text-gray-600 leading-relaxed">
                             En carpeta manila rotulada. Documentos originales el
                             día de la matrícula. Diligenciar con lapicero negro.
                         </p>
                     </div>
-                </div>
-                <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50">
+                </Card>
+                <Card variant="light" hover={false}>
                     <h3
-                        class="text-xl font-bold text-primary mb-4 flex items-center gap-2"
+                        class="text-xl font-bold text-primary mb-6 flex items-center gap-2"
                     >
-                        <i class="fas fa-user-check"></i> Estudiantes Aceptados
+                        <Icon name="lucide:user-check" class="icon-md" /> Estudiantes
+                        Aceptados
                     </h3>
-                    <p class="text-gray-600">
+                    <p class="text-gray-600 leading-relaxed text-base">
                         Una vez verificada la documentación, se publicará el
                         listado oficial según cupos disponibles. El listado
                         estará disponible en PDF en esta sección o fijado en la
                         institución.
                     </p>
-                </div>
+                </Card>
             </div>
         </section>
 
         <!-- Matrícula -->
-        <section class="bg-gray-50 py-20" id="matricula">
+        <section class="bg-gray-50 py-24" id="matricula">
             <div class="container mx-auto px-4 lg:px-8">
                 <SectionHeader subtitle="Proceso" title="Matrícula" />
                 <div class="grid gap-8 lg:grid-cols-2">
                     <!-- Nuevos -->
-                    <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
-                    >
-                        <h3 class="text-xl font-bold text-primary mb-4">
+                    <Card>
+                        <h3 class="text-xl font-bold text-primary mb-6">
                             Estudiantes Nuevos
                         </h3>
-                        <ul class="space-y-2 mb-6">
+                        <ul class="space-y-3 mb-8">
                             {
                                 matriculaNuevos.map((item) => (
-                                    <li class="text-sm text-gray-600">
-                                        • {item}
+                                    <li class="text-base text-gray-600 flex gap-2">
+                                        <span class="text-primary">•</span>{" "}
+                                        {item}
                                     </li>
                                 ))
                             }
@@ -129,19 +128,18 @@ const uniformeNinos = [
                         <p class="text-xs text-gray-400 italic">
                             Trámite presencial por padre/madre.
                         </p>
-                    </div>
+                    </Card>
                     <!-- Antiguos -->
-                    <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
-                    >
-                        <h3 class="text-xl font-bold text-primary mb-4">
+                    <Card>
+                        <h3 class="text-xl font-bold text-primary mb-6">
                             Estudiantes Antiguos
                         </h3>
-                        <ul class="space-y-2 mb-6">
+                        <ul class="space-y-3 mb-8">
                             {
                                 matriculaAntiguos.map((item) => (
-                                    <li class="text-sm text-gray-600">
-                                        • {item}
+                                    <li class="text-base text-gray-600 flex gap-2">
+                                        <span class="text-primary">•</span>{" "}
+                                        {item}
                                     </li>
                                 ))
                             }
@@ -149,7 +147,7 @@ const uniformeNinos = [
                         <p class="text-xs text-gray-400 italic">
                             Renovación anual obligatoria.
                         </p>
-                    </div>
+                    </Card>
                 </div>
             </div>
         </section>
@@ -160,41 +158,55 @@ const uniformeNinos = [
                 subtitle="Uniformes"
                 title="Manual de Convivencia: Presentación"
             />
-            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <div class="p-6 border border-gray-100 rounded-xl">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <Card padding="md">
                     <h4
-                        class="font-bold text-primary mb-4 flex items-center gap-2"
+                        class="font-bold text-primary mb-6 flex items-center gap-2"
                     >
-                        <i class="fas fa-tshirt"></i> Niñas / Jóvenes
+                        <Icon name="lucide:shirt" class="icon-md" /> Niñas / Jóvenes
                     </h4>
-                    <ul class="text-sm space-y-2 text-gray-600">
-                        {uniformeNinas.map((item) => <li>• {item}</li>)}
+                    <ul class="text-base space-y-3 text-gray-600">
+                        {
+                            uniformeNinas.map((item) => (
+                                <li class="flex gap-2">
+                                    <span class="text-primary">•</span> {item}
+                                </li>
+                            ))
+                        }
                     </ul>
-                </div>
-                <div class="p-6 border border-gray-100 rounded-xl">
+                </Card>
+                <Card padding="md">
                     <h4
-                        class="font-bold text-primary mb-4 flex items-center gap-2"
+                        class="font-bold text-primary mb-6 flex items-center gap-2"
                     >
-                        <i class="fas fa-tshirt"></i> Niños / Jóvenes
+                        <Icon name="lucide:shirt" class="icon-md" /> Niños / Jóvenes
                     </h4>
-                    <ul class="text-sm space-y-2 text-gray-600">
-                        {uniformeNinos.map((item) => <li>• {item}</li>)}
+                    <ul class="text-base space-y-3 text-gray-600">
+                        {
+                            uniformeNinos.map((item) => (
+                                <li class="flex gap-2">
+                                    <span class="text-primary">•</span> {item}
+                                </li>
+                            ))
+                        }
                     </ul>
-                </div>
-                <div
-                    class="p-6 bg-brand-dark text-white rounded-xl lg:col-span-1"
-                >
-                    <h4 class="font-bold text-primary mb-4">Ed. Física</h4>
-                    <p class="text-sm text-gray-400">
+                </Card>
+                <Card variant="dark" padding="md">
+                    <h4
+                        class="font-bold text-sky-400 mb-6 flex items-center gap-2"
+                    >
+                        <Icon name="lucide:pipette" class="icon-md" /> Ed. Física
+                    </h4>
+                    <p class="text-base text-gray-300 leading-relaxed mb-6">
                         Camiseta blanca, sudadera azul institucional, tenis
                         blancos o negros.
                     </p>
                     <div
-                        class="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded text-xs text-yellow-500"
+                        class="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl text-xs text-yellow-500/90"
                     >
-                        Nota: No se permite el uso de capuchas.
+                        <strong>Nota:</strong> No se permite el uso de capuchas.
                     </div>
-                </div>
+                </Card>
             </div>
         </section>
     </main>

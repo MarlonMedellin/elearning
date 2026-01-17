@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import PageHeader from "../components/PageHeader.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ScheduleTable from "../components/ScheduleTable.astro";
+import Card from "../components/ui/Card.astro";
 import { Icon } from "astro-icon/components";
 
 const niveles = [
@@ -50,13 +51,13 @@ const proyectos = [
                     <div class="space-y-4">
                         {
                             niveles.map((nivel) => (
-                                <div class="flex items-start gap-4 p-4 rounded-xl border border-gray-50 hover:border-primary/20 hover:bg-brand-light/10 transition-all">
-                                    <div class="w-2 h-2 rounded-full bg-primary mt-2" />
+                                <div class="flex items-start gap-5 p-5 rounded-2xl border border-transparent hover:border-primary/10 hover:bg-brand-light/20 transition-all group">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-primary mt-2.5 shrink-0 group-hover:scale-125 transition-transform" />
                                     <div>
-                                        <h4 class="font-bold text-brand-dark">
+                                        <h4 class="font-bold text-brand-dark text-lg mb-1">
                                             {nivel.name}
                                         </h4>
-                                        <p class="text-base text-gray-500">
+                                        <p class="text-base text-gray-500 leading-relaxed">
                                             {nivel.desc}
                                         </p>
                                     </div>
@@ -69,33 +70,43 @@ const proyectos = [
                 <div class="space-y-8">
                     <div>
                         <h3
-                            class="text-xl font-bold text-brand-dark mb-6 flex items-center gap-2"
+                            class="text-2xl font-black text-brand-dark mb-8 flex items-center gap-3 tracking-tight"
                         >
                             <Icon
                                 name="lucide:clock"
-                                class="text-primary h-6 w-6"
+                                class="text-primary h-7 w-7"
                             /> Horarios Académicos
                         </h3>
-                        <ScheduleTable />
+                        <Card
+                            padding="none"
+                            hover={false}
+                            class="overflow-hidden"
+                        >
+                            <ScheduleTable />
+                        </Card>
                     </div>
 
-                    <div class="p-6 bg-brand-dark rounded-2xl text-white">
-                        <h4 class="font-bold text-primary mb-4">
+                    <Card variant="dark">
+                        <h4 class="font-bold text-sky-400 mb-4 text-xl">
                             Modelos Flexibles
                         </h4>
-                        <ul class="space-y-2 text-base text-gray-400">
-                            <li>
-                                • Procesos Básicos y Aceleración del Aprendizaje
+                        <ul class="space-y-3 text-base text-gray-300">
+                            <li class="flex gap-2">
+                                <span class="text-sky-400">•</span> Procesos Básicos
+                                y Aceleración del Aprendizaje
                             </li>
-                            <li>• Programa Caminar a la Secundaria</li>
+                            <li class="flex gap-2">
+                                <span class="text-sky-400">•</span> Programa Caminar
+                                a la Secundaria
+                            </li>
                         </ul>
-                    </div>
+                    </Card>
                 </div>
             </div>
         </section>
 
         <!-- Proyectos -->
-        <section class="bg-gray-50 py-20" id="proyectos">
+        <section class="bg-gray-50 py-24" id="proyectos">
             <div class="container mx-auto px-4 lg:px-8">
                 <SectionHeader
                     subtitle="Institucional"
@@ -105,20 +116,20 @@ const proyectos = [
                 <div class="grid gap-8 md:grid-cols-3">
                     {
                         proyectos.map((proyecto) => (
-                            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all text-center">
-                                <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6">
+                            <Card class="text-center group">
+                                <div class="w-20 h-20 bg-brand-light rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-all duration-500 rotate-3 group-hover:rotate-0">
                                     <Icon
                                         name={proyecto.icon}
-                                        class="text-3xl text-primary"
+                                        class="text-3xl text-primary group-hover:text-white transition-colors"
                                     />
                                 </div>
-                                <h4 class="text-xl font-bold text-brand-dark mb-2">
+                                <h4 class="text-2xl font-bold text-brand-dark mb-4 tracking-tight">
                                     {proyecto.name}
                                 </h4>
-                                <p class="text-base text-gray-500">
+                                <p class="text-base text-gray-600 leading-relaxed">
                                     {proyecto.desc}
                                 </p>
-                            </div>
+                            </Card>
                         ))
                     }
                 </div>

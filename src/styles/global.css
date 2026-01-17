@@ -8,6 +8,10 @@
 
   --font-heebo: "Heebo", sans-serif;
   --font-nunito: "Nunito", sans-serif;
+
+  --radius-card: 1.5rem;
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-card-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 :root {
@@ -22,4 +26,19 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heebo);
+}
+
+@utility icon-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+@utility icon-md {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@utility icon-lg {
+  width: 2rem;
+  height: 2rem;
 }

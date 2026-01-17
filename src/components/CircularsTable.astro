@@ -1,8 +1,28 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const circulares = [
-  { id: '2025-10-01', date: '01/10/2025', href: 'https://lacapilla.edu.co/10-AGENDA-OCTUBLE-2025.pdf', title: 'Circular No. 10', desc: 'Agenda institucional mes de Octubre.' },
-  { id: '2025-09-01', date: '01/09/2025', href: 'https://lacapilla.edu.co/09-AGENDA-SEPTIEMBRE-2025.pdf', title: 'Circular No. 09', desc: 'Agenda institucional mes de Septiembre.' },
-  { id: '2025-08-01', date: '01/08/2025', href: 'https://lacapilla.edu.co/08-AGENDA-AGOSTO-2025.pdf', title: 'Circular No. 08', desc: 'Agenda institucional mes de Agosto.' },
+    {
+        id: "2025-10-01",
+        date: "01/10/2025",
+        href: "https://lacapilla.edu.co/10-AGENDA-OCTUBLE-2025.pdf",
+        title: "Circular No. 10",
+        desc: "Agenda institucional mes de Octubre.",
+    },
+    {
+        id: "2025-09-01",
+        date: "01/09/2025",
+        href: "https://lacapilla.edu.co/09-AGENDA-SEPTIEMBRE-2025.pdf",
+        title: "Circular No. 09",
+        desc: "Agenda institucional mes de Septiembre.",
+    },
+    {
+        id: "2025-08-01",
+        date: "01/08/2025",
+        href: "https://lacapilla.edu.co/08-AGENDA-AGOSTO-2025.pdf",
+        title: "Circular No. 08",
+        desc: "Agenda institucional mes de Agosto.",
+    },
 ];
 ---
 
@@ -17,18 +37,27 @@ const circulares = [
             </tr>
         </thead>
         <tbody class="divide-y divide-gray-100">
-            {circulares.map((item) => (
-                <tr class="hover:bg-brand-light/10 transition-colors">
-                    <td class="px-6 py-4 font-mono text-xs text-gray-500">{item.id}</td>
-                    <td class="px-6 py-4 text-gray-600">{item.date}</td>
-                    <td class="px-6 py-4">
-                        <a href={item.href} target="_blank" class="text-primary font-bold hover:underline flex items-center gap-2">
-                            <i class="fas fa-file-pdf"></i> {item.title}
-                        </a>
-                    </td>
-                    <td class="px-6 py-4 text-gray-500">{item.desc}</td>
-                </tr>
-            ))}
+            {
+                circulares.map((item) => (
+                    <tr class="hover:bg-brand-light/10 transition-colors">
+                        <td class="px-6 py-4 font-mono text-xs text-gray-500">
+                            {item.id}
+                        </td>
+                        <td class="px-6 py-4 text-gray-600">{item.date}</td>
+                        <td class="px-6 py-4">
+                            <a
+                                href={item.href}
+                                target="_blank"
+                                class="text-primary font-bold hover:underline flex items-center gap-2"
+                            >
+                                <Icon name="lucide:file-text" class="icon-sm" />{" "}
+                                {item.title}
+                            </a>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500">{item.desc}</td>
+                    </tr>
+                ))
+            }
         </tbody>
     </table>
 </div>
