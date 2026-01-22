@@ -7,7 +7,7 @@ import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/ui/Card.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import noticiasImage from "../assets/noticias.png";
+import noticiasImage from "../assets/noticias.jpg";
 
 const inscripcionRequisitos = [
   "Documento de identidad (Registro Civil o Tarjeta de Identidad).",
@@ -55,7 +55,7 @@ const uniformeFisica = [
   "Medias blancas, negras o azul oscuro (no tobilleras).",
 ];
 
-const newsItems = [
+const cartelGeneral = [
   {
     time: "Martes 20",
     title: "Grados: 8° y 9°",
@@ -76,7 +76,32 @@ const newsItems = [
     time: "Nota",
     title: "Importante",
     description:
-      "Las personas que requieran cupos deben presentar fotocopias de los documentos solicitados.",
+      "Las personas que requieren cupos deben traer fotocopias de los documentos solicitados por la institución.",
+  },
+];
+
+const cartelEspeciales = [
+  {
+    time: "Viernes 23",
+    title: "Alumnos antiguos (pendientes)",
+    description:
+      "Matrículas para alumnos antiguos que aún no se han matriculado.",
+  },
+  {
+    time: "Requisitos",
+    title: "Papelería",
+    description:
+      "Boletín 2025, Paz y Salvo, EPS actualizada, Recibo de Servicios Públicos.",
+  },
+  {
+    time: "Martes 27",
+    title: "Alumnos nuevos",
+    description: "Traer documentación completa.",
+  },
+  {
+    time: "Nota",
+    title: "Importante",
+    description: "Traer documentación completa.",
   },
 ];
 ---
@@ -96,15 +121,51 @@ const newsItems = [
           class="inline-block px-3 py-1 bg-primary/10 text-primary font-bold text-xs tracking-widest uppercase rounded mb-4"
           >Noticias</span
         >
-        <h2 class="text-4xl font-black text-brand-dark">Últimas Noticias</h2>
+        <h2 class="text-4xl font-black text-brand-dark">
+          Información de Matrículas 2026
+        </h2>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
         <!-- Columna Izquierda: Agenda -->
         <div class="space-y-6">
+          <h3
+            class="text-xl font-black text-brand-dark uppercase border-b-2 border-primary/20 pb-2"
+          >
+            CARTEL 1: PROGRAMACIÓN GENERAL
+          </h3>
           {
-            newsItems.map((item) => (
+            cartelGeneral.map((item) => (
               <div class="flex gap-4 p-5 bg-white border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow rounded-r-lg">
+                <div class="flex-shrink-0 flex flex-col items-center justify-center w-20 border-r border-gray-100 pr-4 my-1">
+                  <Icon
+                    name="lucide:clock"
+                    class="w-5 h-5 text-gray-400 mb-1"
+                  />
+                  <span class="text-brand-dark font-black text-sm whitespace-nowrap">
+                    {item.time}
+                  </span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-brand-dark mb-1">
+                    {item.title}
+                  </h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+
+          <h3
+            class="text-xl font-black text-brand-dark uppercase border-b-2 border-secondary/20 pb-2 mt-12"
+          >
+            CARTEL 2: CASOS ESPECIALES Y NUEVOS
+          </h3>
+          {
+            cartelEspeciales.map((item) => (
+              <div class="flex gap-4 p-5 bg-white border-l-4 border-secondary shadow-sm hover:shadow-md transition-shadow rounded-r-lg">
                 <div class="flex-shrink-0 flex flex-col items-center justify-center w-20 border-r border-gray-100 pr-4 my-1">
                   <Icon
                     name="lucide:clock"
