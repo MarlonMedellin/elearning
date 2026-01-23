@@ -7,7 +7,10 @@ import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/ui/Card.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import noticiasImage from "../assets/noticias.jpg";
+import noticias1 from "../assets/noticias1.jpg";
+import noticias2 from "../assets/noticias2.jpg";
+import noticias3 from "../assets/noticias3.jpg";
+import noticias4 from "../assets/noticias4.jpg";
 
 const inscripcionRequisitos = [
   "Documento de identidad (Registro Civil o Tarjeta de Identidad).",
@@ -55,53 +58,126 @@ const uniformeFisica = [
   "Medias blancas, negras o azul oscuro (no tobilleras).",
 ];
 
-const cartelGeneral = [
+const carteles = [
   {
-    time: "Martes 20",
-    title: "Grados: 8° y 9°",
-    description: "Programación Matrículas 2026.",
+    id: 4,
+    mainTitle: "CARTEL 4: CASOS ESPECIALES Y NUEVOS",
+    image: noticias4,
+    borderColor: "border-secondary",
+    items: [
+      {
+        time: "Viernes 23",
+        title: "Alumnos antiguos",
+        description:
+          "Matrículas para alumnos antiguos que aún no se han matriculado.",
+      },
+      {
+        time: "Requisitos",
+        title: "Papelería general",
+        description:
+          "Boletín 2025, Paz y Salvo, EPS actualizada y recibo de Servicios públicos.",
+      },
+      {
+        time: "Martes 27",
+        title: "Alumnos Nuevos",
+        description: "Matrícula para estudiantes nuevos.",
+      },
+      {
+        time: "Importante",
+        title: "Documentación",
+        description: "Es obligatorio traer la documentación completa.",
+      },
+    ],
   },
   {
-    time: "Miércoles 21",
-    title: "Grados: 10° y 11°",
-    description: "Programación Matrículas 2026.",
+    id: 3,
+    mainTitle: "CARTEL 3: PROGRAMACIÓN matriculas 2026",
+    image: noticias3,
+    borderColor: "border-primary",
+    items: [
+      {
+        time: "Martes 20",
+        title: "Grados 8° y 9°",
+        description: "Programación de Matrículas 2026.",
+      },
+      {
+        time: "Miércoles 21",
+        title: "Grados 10° y 11°",
+        description: "Programación de Matrículas 2026.",
+      },
+      {
+        time: "Jueves 22",
+        title: "Básica Primaria",
+        description:
+          "Para estudiantes que no se hayan matriculado en la programación anterior.",
+      },
+      {
+        time: "Nota",
+        title: "Cupos nuevos",
+        description:
+          "Las personas que requieren cupos deben traer fotocopias de documentos solicitados por la Institución.",
+      },
+    ],
   },
   {
-    time: "Jueves 22",
-    title: "Básica Primaria",
-    description:
-      "Estudiantes que no se hayan matriculado en la programación anterior.",
+    id: 2,
+    mainTitle: "CARTEL 2: CASOS ESPECIALES Y NUEVOS",
+    image: noticias2,
+    borderColor: "border-secondary",
+    items: [
+      {
+        time: "Viernes 23",
+        title: "Alumnos antiguos (pendientes)",
+        description:
+          "Matrículas para alumnos antiguos que aún no se han matriculado.",
+      },
+      {
+        time: "Requisitos",
+        title: "Papelería",
+        description:
+          "Boletín 2025, Paz y Salvo, EPS actualizada, Recibo de Servicios Públicos.",
+      },
+      {
+        time: "Martes 27",
+        title: "Alumnos nuevos",
+        description: "Traer documentación completa.",
+      },
+      {
+        time: "Nota",
+        title: "Importante",
+        description: "Traer documentación completa.",
+      },
+    ],
   },
   {
-    time: "Nota",
-    title: "Importante",
-    description:
-      "Las personas que requieren cupos deben traer fotocopias de los documentos solicitados por la institución.",
-  },
-];
-
-const cartelEspeciales = [
-  {
-    time: "Viernes 23",
-    title: "Alumnos antiguos (pendientes)",
-    description:
-      "Matrículas para alumnos antiguos que aún no se han matriculado.",
-  },
-  {
-    time: "Requisitos",
-    title: "Papelería",
-    description:
-      "Boletín 2025, Paz y Salvo, EPS actualizada, Recibo de Servicios Públicos.",
-  },
-  {
-    time: "Martes 27",
-    title: "Alumnos nuevos",
-    description: "Traer documentación completa.",
-  },
-  {
-    time: "Nota",
-    title: "Importante",
-    description: "Traer documentación completa.",
+    id: 1,
+    mainTitle: "CARTEL 1: PROGRAMACIÓN GENERAL",
+    image: noticias1,
+    borderColor: "border-primary",
+    items: [
+      {
+        time: "Martes 20",
+        title: "Grados: 8° y 9°",
+        description: "Programación Matrículas 2026.",
+      },
+      {
+        time: "Miércoles 21",
+        title: "Grados: 10° y 11°",
+        description: "Programación Matrículas 2026.",
+      },
+      {
+        time: "Jueves 22",
+        title: "Básica Primaria",
+        description:
+          "Estudiantes que no se hayan matriculado en la programación anterior.",
+      },
+      {
+        time: "Nota",
+        title: "Importante",
+        description:
+          "Las personas que requieren cupos deben traer fotocopias de los documentos solicitados por la institución.",
+      },
+    ],
   },
 ];
 ---
@@ -126,78 +202,53 @@ const cartelEspeciales = [
         </h2>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-        <!-- Columna Izquierda: Agenda -->
-        <div class="space-y-6">
-          <h3
-            class="text-xl font-black text-brand-dark uppercase border-b-2 border-primary/20 pb-2"
-          >
-            CARTEL 1: PROGRAMACIÓN GENERAL
-          </h3>
-          {
-            cartelGeneral.map((item) => (
-              <div class="flex gap-4 p-5 bg-white border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow rounded-r-lg">
-                <div class="flex-shrink-0 flex flex-col items-center justify-center w-20 border-r border-gray-100 pr-4 my-1">
-                  <Icon
-                    name="lucide:clock"
-                    class="w-5 h-5 text-gray-400 mb-1"
-                  />
-                  <span class="text-brand-dark font-black text-sm whitespace-nowrap">
-                    {item.time}
-                  </span>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-brand-dark mb-1">
-                    {item.title}
-                  </h3>
-                  <p class="text-gray-600 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+      <div class="space-y-16">
+        {
+          carteles.map((cartel) => (
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+              {/* Columna Izquierda: Información */}
+              <div class="space-y-6">
+                <h3
+                  class={`text-xl font-black text-brand-dark uppercase border-b-2 ${cartel.borderColor === "border-primary" ? "border-primary/20" : "border-secondary/20"} pb-2`}
+                >
+                  {cartel.mainTitle}
+                </h3>
+                {cartel.items.map((item) => (
+                  <div
+                    class={`flex gap-4 p-5 bg-white border-l-4 ${cartel.borderColor} shadow-sm hover:shadow-md transition-shadow rounded-r-lg`}
+                  >
+                    <div class="flex-shrink-0 flex flex-col items-center justify-center w-20 border-r border-gray-100 pr-4 my-1">
+                      <Icon
+                        name="lucide:clock"
+                        class="w-5 h-5 text-gray-400 mb-1"
+                      />
+                      <span class="text-brand-dark font-black text-sm whitespace-nowrap">
+                        {item.time}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 class="text-lg font-bold text-brand-dark mb-1">
+                        {item.title}
+                      </h3>
+                      <p class="text-gray-600 text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))
-          }
 
-          <h3
-            class="text-xl font-black text-brand-dark uppercase border-b-2 border-secondary/20 pb-2 mt-12"
-          >
-            CARTEL 2: CASOS ESPECIALES Y NUEVOS
-          </h3>
-          {
-            cartelEspeciales.map((item) => (
-              <div class="flex gap-4 p-5 bg-white border-l-4 border-secondary shadow-sm hover:shadow-md transition-shadow rounded-r-lg">
-                <div class="flex-shrink-0 flex flex-col items-center justify-center w-20 border-r border-gray-100 pr-4 my-1">
-                  <Icon
-                    name="lucide:clock"
-                    class="w-5 h-5 text-gray-400 mb-1"
-                  />
-                  <span class="text-brand-dark font-black text-sm whitespace-nowrap">
-                    {item.time}
-                  </span>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-brand-dark mb-1">
-                    {item.title}
-                  </h3>
-                  <p class="text-gray-600 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+              {/* Columna Derecha: Imagen */}
+              <div class="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl p-4 flex items-center justify-center ring-1 ring-gray-200/50">
+                <Image
+                  src={cartel.image}
+                  alt={cartel.mainTitle}
+                  class="w-full h-auto object-contain rounded-lg max-h-[600px]"
+                />
               </div>
-            ))
-          }
-        </div>
-
-        <!-- Columna Derecha: Poster -->
-        <div
-          class="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl p-4 flex items-center justify-center ring-1 ring-gray-200/50"
-        >
-          <Image
-            src={noticiasImage}
-            alt="Programación Matrículas 2026"
-            class="w-full h-auto object-contain rounded-lg max-h-[600px]"
-          />
-        </div>
+            </div>
+          ))
+        }
       </div>
     </section>
     <!-- SECCIÓN 1: Inscripción y Cupos Disponibles -->
