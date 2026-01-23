@@ -11,6 +11,8 @@ import noticias1 from "../assets/noticias1.jpg";
 import noticias2 from "../assets/noticias2.jpg";
 import noticias3 from "../assets/noticias3.jpg";
 import noticias4 from "../assets/noticias4.jpg";
+import CartelItem from "../components/CartelItem.astro";
+import type { CartelData } from "../types/admisiones";
 
 const inscripcionRequisitos = [
   "Documento de identidad (Registro Civil o Tarjeta de Identidad).",
@@ -58,7 +60,7 @@ const uniformeFisica = [
   "Medias blancas, negras o azul oscuro (no tobilleras).",
 ];
 
-const carteles = [
+const carteles: CartelData[] = [
   {
     id: 4,
     mainTitle: "CARTEL 4: CASOS ESPECIALES Y NUEVOS",
@@ -214,27 +216,12 @@ const carteles = [
                   {cartel.mainTitle}
                 </h3>
                 {cartel.items.map((item) => (
-                  <div
-                    class={`flex gap-4 p-5 bg-white border-l-4 ${cartel.borderColor} shadow-sm hover:shadow-md transition-shadow rounded-r-lg`}
-                  >
-                    <div class="flex-shrink-0 flex flex-col items-center justify-center w-20 border-r border-gray-100 pr-4 my-1">
-                      <Icon
-                        name="lucide:clock"
-                        class="w-5 h-5 text-gray-400 mb-1"
-                      />
-                      <span class="text-brand-dark font-black text-sm whitespace-nowrap">
-                        {item.time}
-                      </span>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-brand-dark mb-1">
-                        {item.title}
-                      </h3>
-                      <p class="text-gray-600 text-sm leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
+                  <CartelItem
+                    time={item.time}
+                    title={item.title}
+                    description={item.description}
+                    borderColor={cartel.borderColor}
+                  />
                 ))}
               </div>
 
@@ -244,6 +231,8 @@ const carteles = [
                   src={cartel.image}
                   alt={cartel.mainTitle}
                   class="w-full h-auto object-contain rounded-lg max-h-[600px]"
+                  widths={[240, 540, 720, cartel.image.width]}
+                  sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${cartel.image.width}px`}
                 />
               </div>
             </div>
