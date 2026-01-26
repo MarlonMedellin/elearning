@@ -11,6 +11,8 @@ import noticias1 from "../assets/noticias1.jpg";
 import noticias2 from "../assets/noticias2.jpg";
 import noticias3 from "../assets/noticias3.jpg";
 import noticias4 from "../assets/noticias4.jpg";
+import noticias5 from "../assets/noticias5.jpg";
+import noticias6 from "../assets/noticias6.jpg";
 import CartelItem from "../components/CartelItem.astro";
 import type { CartelData } from "../types/admisiones";
 
@@ -61,6 +63,51 @@ const uniformeFisica = [
 ];
 
 const carteles: CartelData[] = [
+  {
+    id: 6,
+    mainTitle: "CARTEL 6: REUNIÓN DE ESTUDIANTES",
+    image: noticias6,
+    borderColor: "border-primary",
+    items: [
+      {
+        time: "Martes 27",
+        title: "Próxima reunión",
+        description:
+          "Para estudiantes que no aprobaron y no asistieron a la reunión pasada.",
+      },
+      {
+        time: "6:00 AM",
+        title: "Horario de atención",
+        description: "La reunión se llevará a cabo a las 6:00 am.",
+      },
+    ],
+  },
+  {
+    id: 5,
+    mainTitle: "CARTEL 5: ACTIVIDADES DE APOYO",
+    image: noticias5,
+    borderColor: "border-accent",
+    items: [
+      {
+        time: "Miércoles 28",
+        title: "Estudiantes con actividades de apoyo",
+        description:
+          "Matrículas para estudiantes que aprobaron actividades de apoyo.",
+      },
+      {
+        time: "Importante",
+        title: "Documentación",
+        description:
+          "Es obligatorio traer la documentación completa para el proceso.",
+      },
+      {
+        time: "Nota",
+        title: "Atención",
+        description:
+          "Información dirigida exclusivamente a quienes finalizaron sus actividades de apoyo.",
+      },
+    ],
+  },
   {
     id: 4,
     mainTitle: "CARTEL 4: CASOS ESPECIALES Y NUEVOS",
