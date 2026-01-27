@@ -1,0 +1,128 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  text?: string;
+  url?: string; // Optional: if not provided, uses current URL
+}
+
+const { title, text = "", url } = Astro.props;
+---
+
+<div class="social-share mt-6 border-t border-gray-100 pt-6">
+  <p class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">
+    Compartir información
+  </p>
+  <div class="flex flex-wrap gap-2">
+    <!-- WhatsApp -->
+    <button
+      data-share-wa
+      class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition-colors text-sm font-semibold"
+      aria-label="Compartir en WhatsApp"
+    >
+      <Icon name="lucide:message-circle" class="w-4 h-4" />
+      WhatsApp
+    </button>
+
+    <!-- Copy Link -->
+    <button
+      data-share-copy
+      class="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors text-sm font-semibold group relative"
+      aria-label="Copiar enlace"
+    >
+      <Icon name="lucide:link" class="w-4 h-4" />
+      <span class="group-data-[copied=true]:hidden">Copiar Enlace</span>
+      <span class="hidden group-data-[copied=true]:inline text-green-600"
+        >¡Copiado!</span
+      >
+    </button>
+
+    <!-- Native Share (Mobile) -->
+    <button
+      data-share-native
+      class="hidden lg:hidden inline-flex items-center gap-2 px-4 py-2 bg-brand-light/10 text-brand-dark rounded-lg hover:bg-brand-light/20 transition-colors text-sm font-semibold"
+      aria-label="Más opciones"
+    >
+      <Icon name="lucide:share-2" class="w-4 h-4" />
+      Más
+    </button>
+  </div>
+</div>
+
+<script define:vars={{ title, text, url }}>
+  // Initialize component logic
+  class SocialShareController {
+    constructor(element) {
+      this.element = element;
+      this.init();
+    }
+
+    init() {
+      // Determines URL (prop or current window)
+      this.shareUrl = url || window.location.href;
+      this.shareTitle = title;
+      this.shareText = text;
+
+      this.setupWhatsApp();
+      this.setupCopy();
+      this.setupNative();
+    }
+
+    setupWhatsApp() {
+      const btn = this.element.querySelector("[data-share-wa]");
+      if (!btn) return;
+
+      btn.addEventListener("click", () => {
+        const message = `*${this.shareTitle}*\n${this.shareText}\n\nVer más aquí: ${this.shareUrl}`;
+        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      });
+    }
+
+    setupCopy() {
+      const btn = this.element.querySelector("[data-share-copy]");
+      if (!btn) return;
+
+      btn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(this.shareUrl);
+
+          // Visual feedback
+          btn.setAttribute("data-copied", "true");
+          setTimeout(() => {
+            btn.removeAttribute("data-copied");
+          }, 2000);
+        } catch (err) {
+          console.error("Error al copiar:", err);
+        }
+      });
+    }
+
+    setupNative() {
+      const btn = this.element.querySelector("[data-share-native]");
+      if (!btn) return;
+
+      // Only show if supported
+      if (navigator.share) {
+        btn.classList.remove("hidden");
+        btn.addEventListener("click", async () => {
+          try {
+            await navigator.share({
+              title: this.shareTitle,
+              text: this.shareText,
+              url: this.shareUrl,
+            });
+          } catch (err) {
+            console.log("Error sharing:", err);
+          }
+        });
+      }
+    }
+  }
+
+  // Instantiate for each component specifically
+  document.querySelectorAll(".social-share").forEach((el) => {
+    new SocialShareController(el);
+  });
+</script>
