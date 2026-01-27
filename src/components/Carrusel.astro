@@ -1,0 +1,50 @@
+---
+const slides = [
+  {
+    id: 1,
+    image: "/img/gallery/banner100.jpg",
+    alt: "Banner Institucional",
+  },
+];
+---
+
+<section
+  class="relative w-full overflow-hidden"
+  aria-label="Galería de imágenes"
+>
+  <!-- Contenedor del Carrusel -->
+  <div
+    class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth no-scrollbar"
+  >
+    {
+      slides.map((slide) => (
+        <div class="w-full flex-shrink-0 snap-center relative">
+          <img
+            src={slide.image}
+            alt={slide.alt}
+            class="w-full h-auto object-contain max-h-[85vh]"
+            loading="eager"
+          />
+        </div>
+      ))
+    }
+  </div>
+
+  {
+    /* 
+    Indicadores o flechas podrían ir aqui en el futuro.
+    Por ahora, con una sola imagen, no son necesarios.
+  */
+  }
+</section>
+
+<style>
+  /* Ocultar la barra de scroll pero permitir scroll */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
