@@ -96,6 +96,13 @@ const carteles: CartelData[] = [
           "Matrículas para estudiantes que aprobaron actividades de apoyo.",
       },
       {
+        time: "",
+        title: "",
+        description:
+          "Para la matricula el alumno debe tener el ficho que le entrego el docente con el cual hizo actividades de apoyo",
+        isAlert: true,
+      },
+      {
         time: "Importante",
         title: "Documentación",
         description:
@@ -317,6 +324,7 @@ const carteles: CartelData[] = [
                     title={item.title}
                     description={item.description}
                     borderColor={cartel.borderColor}
+                    isAlert={item.isAlert}
                   />
                 ))}
               </div>

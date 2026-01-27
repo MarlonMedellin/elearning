@@ -2,6 +2,7 @@ export interface CartelItemData {
     time: string;
     title: string;
     description: string;
+    isAlert?: boolean;
 }
 
 export interface CartelData {
