@@ -239,6 +239,46 @@ const carteles: CartelData[] = [
   <PageHeader title="Admisiones" />
 
   <main class="space-y-24 pb-24">
+    <!-- SECCIÓN: Listado de Admitidos -->
+    <section class="container mx-auto px-4 lg:px-8 mt-12" id="admitidos">
+      <div
+        class="bg-white rounded-2xl p-8 lg:p-10 shadow-xl border border-gray-100"
+      >
+        <div class="mb-6">
+          <span
+            class="inline-block px-3 py-1 bg-green-100 text-green-700 font-bold text-xs tracking-widest uppercase rounded mb-4"
+          >
+            Resultados
+          </span>
+          <h2 class="text-3xl lg:text-4xl font-black text-brand-dark">
+            Listado de Admitidos
+          </h2>
+        </div>
+
+        <div class="flex flex-col items-start gap-6">
+          <p class="text-gray-600 text-lg max-w-2xl">
+            Consulte el documento oficial con la lista de estudiantes admitidos
+            para el periodo académico 2026.
+          </p>
+
+          <a
+            href="/docs/listaadmitid2026.pdf"
+            download
+            class="inline-flex items-center gap-3 bg-primary text-white font-bold py-4 px-8 rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/20"
+          >
+            <Icon name="lucide:file-down" class="h-6 w-6" />
+            Descargar Lista de Admitidos
+          </a>
+
+          <p
+            class="text-gray-500 text-sm bg-gray-50 px-4 py-2 rounded-lg border border-gray-100"
+          >
+            <strong>Listado publicado el 27 de enero de 2026</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- SECCIÓN: Últimas Noticias -->
     <section class="container mx-auto px-4 lg:px-8 mt-12" id="noticias">
       <div class="mb-10">
