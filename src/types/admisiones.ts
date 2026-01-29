@@ -11,4 +11,5 @@ export interface CartelData {
     image: ImageMetadata;
     borderColor: string;
     items: CartelItemData[];
+    showSocialShare?: boolean;
 }

@@ -13,6 +13,7 @@ import noticias3 from "../assets/noticias3.jpg";
 import noticias4 from "../assets/noticias4.jpg";
 import noticias5 from "../assets/noticias5.jpg";
 import noticias6 from "../assets/noticias6.jpg";
+import noticias7 from "../assets/noticias7.jpg";
 import CartelItem from "../components/CartelItem.astro";
 import SocialShare from "../components/ui/SocialShare.astro";
 import type { CartelData } from "../types/admisiones";
@@ -64,6 +65,32 @@ const uniformeFisica = [
 ];
 
 const carteles: CartelData[] = [
+  {
+    id: 8,
+    mainTitle: "CARTEL 8: REUNIÓN DE REPITENTES",
+    image: noticias7,
+    borderColor: "border-secondary",
+    showSocialShare: true,
+    items: [
+      {
+        time: "Martes 3 de Febrero",
+        title: "Padres de familia y alumnos",
+        description:
+          "Reunión obligatoria para estudiantes repitentes que no han asistido a las reuniones pasadas.",
+      },
+      {
+        time: "6:00 AM",
+        title: "Horario",
+        description:
+          "La asistencia es requerida a las 6:00 am en las instalaciones.",
+      },
+      {
+        time: "Requisito",
+        title: "Documentación",
+        description: "Deben asistir con la documentación completa.",
+      },
+    ],
+  },
   {
     id: 7,
     mainTitle: "CARTEL 7: ALUMNOS ANTIGUOS PROMOVIDOS",
@@ -346,6 +373,15 @@ const carteles: CartelData[] = [
                     isAlert={item.isAlert}
                   />
                 ))}
+                {cartel.showSocialShare && (
+                  <div class="mt-6 pt-6 border-t border-gray-100">
+                    <SocialShare
+                      title={`${cartel.mainTitle} - IE Capilla del Rosario`}
+                      text={`Consulta la información: ${cartel.mainTitle}`}
+                      url={Astro.url.href}
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Columna Derecha: Imagen */}
