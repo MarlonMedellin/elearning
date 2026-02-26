@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { version } from "../../package.json";
 
 const portals = [
   {
@@ -118,6 +119,8 @@ const contactInfo = [
     <div class="mt-12 text-center text-sm text-gray-600">
       © 2026 Institución Educativa Capilla del Rosario. Todos los derechos
       reservados.
+      <span class="mx-2 opacity-40">·</span>
+      <span class="opacity-60">v{version}</span>
     </div>
   </div>
 </footer>
