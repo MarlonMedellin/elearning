@@ -9,6 +9,11 @@ const navItems = [
   { name: "Vida Institucional", href: "/vida-institucional" },
   { name: "Galería", href: "/galeria" },
   { name: "Comunicaciones", href: "/circulares" },
+  {
+    name: "Master2000",
+    href: "https://login.master2000.net/ingreso/?A=105001008486&&",
+    external: true,
+  },
   { name: "Contacto", href: "/contact" },
 ];
 
@@ -36,6 +41,8 @@ const { pathname } = Astro.url;
         navItems.map((item) => (
           <a
             href={item.href}
+            target={item.external ? "_blank" : "_self"}
+            rel={item.external ? "noopener noreferrer" : ""}
             class={`relative flex h-16 items-center px-4 text-xs font-bold uppercase tracking-wider transition-colors hover:text-primary ${
               pathname === item.href ||
               (item.href !== "/" && pathname.startsWith(item.href))
@@ -70,6 +77,8 @@ const { pathname } = Astro.url;
         navItems.map((item) => (
           <a
             href={item.href}
+            target={item.external ? "_blank" : "_self"}
+            rel={item.external ? "noopener noreferrer" : ""}
             class={`px-4 py-3 text-sm font-bold uppercase tracking-wide rounded-xl transition-colors ${
               pathname === item.href
                 ? "bg-primary text-white"
