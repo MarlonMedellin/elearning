@@ -32,17 +32,38 @@ import { Icon } from "astro-icon/components";
             <Icon name="lucide:bell" class="w-4 h-4" /> Noticia Importante
           </div>
 
-          <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
-            ¡Estrenamos un nuevo y moderno sistema académico!
-          </h2>
+          <div class="flex flex-col md:flex-row gap-6 md:items-start mb-6">
+            <div class="flex-1">
+              <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
+                ¡Estrenamos un nuevo y moderno sistema académico!
+              </h2>
 
-          <p class="text-gray-700 text-lg mb-6 leading-relaxed">
-            Nos emociona anunciar que nuestra institución educativa ha comenzado
-            a utilizar el sistema de GMA Digital (creadores de la plataforma
-            Master 2000), una herramienta colombiana con más de 25 años de
-            experiencia apoyando a los colegios. Este cambio nos permitirá
-            organizar mejor nuestra información y estar más conectados.
-          </p>
+              <p class="text-gray-700 text-lg leading-relaxed">
+                Nos emociona anunciar que nuestra institución educativa ha
+                comenzado a utilizar el sistema de GMA Digital (creadores de la
+                plataforma Master 2000), una herramienta colombiana con más de
+                25 años de experiencia apoyando a los colegios. Este cambio nos
+                permitirá organizar mejor nuestra información y estar más
+                conectados.
+              </p>
+            </div>
+
+            <div
+              class="md:w-64 flex-shrink-0 place-self-start md:place-self-auto p-4 bg-white/50 backdrop-blur rounded-xl border border-brand-light/30 shadow-sm"
+            >
+              <a
+                href="https://login.master2000.net/ingreso/?A=105001008486&&"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/master01.png"
+                  alt="Master2000 - Ingreso Software Académico"
+                  class="w-full h-auto object-contain transition-transform hover:scale-105"
+                />
+              </a>
+            </div>
+          </div>
 
           <h3 class="text-xl font-bold text-brand-dark mb-4 drop-shadow-sm">
             Aquí te contamos las principales bondades de este nuevo sistema para
