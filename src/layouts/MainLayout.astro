@@ -10,10 +10,14 @@ import "@fontsource/nunito/800.css";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Sitio Institucional - IE Capilla del Rosario" } =
-  Astro.props;
+const {
+  title,
+  description = "Sitio Institucional - IE Capilla del Rosario",
+  image = "/assets/escudo.jpg",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -31,7 +35,7 @@ const { title, description = "Sitio Institucional - IE Capilla del Rosario" } =
     <meta property="og:description" content={description} />
     <meta
       property="og:image"
-      content={new URL("/assets/escudo.jpg", Astro.site)}
+      content={new URL(image, Astro.site)}
     />
 
     <!-- Twitter -->
@@ -44,7 +48,7 @@ const { title, description = "Sitio Institucional - IE Capilla del Rosario" } =
     <meta property="twitter:description" content={description} />
     <meta
       property="twitter:image"
-      content={new URL("/assets/escudo.jpg", Astro.site)}
+      content={new URL(image, Astro.site)}
     />
 
     <!-- JSON-LD Structured Data -->
@@ -52,13 +56,13 @@ const { title, description = "Sitio Institucional - IE Capilla del Rosario" } =
       {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
-        "name": "Institución Educativa Capilla del Rosario",
+        "name": "Instituci&oacute;n Educativa Capilla del Rosario",
         "url": "https://lacapilla.edu.co",
         "logo": "https://lacapilla.edu.co/favicon.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Cl. 6 Sur #79-195",
-          "addressLocality": "Medellín",
+          "addressLocality": "Medell&iacute;n",
           "addressRegion": "Antioquia",
           "addressCountry": "CO"
         },

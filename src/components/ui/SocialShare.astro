@@ -5,14 +5,15 @@ interface Props {
   title: string;
   text?: string;
   url?: string; // Optional: if not provided, uses current URL
+  waIcon?: string;
 }
 
-const { title, text = "", url } = Astro.props;
+const { title, text = "", url, waIcon = "lucide:message-circle" } = Astro.props;
 ---
 
-<div class="social-share mt-6 border-t border-gray-100 pt-6">
+<div class="social-share mt-6 border-t border-gray-100 pt-6" data-title={title} data-text={text} data-url={url}>
   <p class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">
-    Compartir información
+    Compartir informaci&oacute;n
   </p>
   <div class="flex flex-wrap gap-2">
     <!-- WhatsApp -->
@@ -21,7 +22,7 @@ const { title, text = "", url } = Astro.props;
       class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition-colors text-sm font-semibold"
       aria-label="Compartir en WhatsApp"
     >
-      <Icon name="lucide:message-circle" class="w-4 h-4" />
+      <Icon name={waIcon} class="w-4 h-4" />
       WhatsApp
     </button>
 
@@ -34,7 +35,7 @@ const { title, text = "", url } = Astro.props;
       <Icon name="lucide:link" class="w-4 h-4" />
       <span class="group-data-[copied=true]:hidden">Copiar Enlace</span>
       <span class="hidden group-data-[copied=true]:inline text-green-600"
-        >¡Copiado!</span
+        >&iexcl;Copiado!</span
       >
     </button>
 
@@ -45,12 +46,12 @@ const { title, text = "", url } = Astro.props;
       aria-label="Más opciones"
     >
       <Icon name="lucide:share-2" class="w-4 h-4" />
-      Más
+      M&aacute;s
     </button>
   </div>
 </div>
 
-<script define:vars={{ title, text, url }}>
+<script>
   // Initialize component logic
   class SocialShareController {
     constructor(element) {
@@ -59,14 +60,19 @@ const { title, text = "", url } = Astro.props;
     }
 
     init() {
-      // Determines URL (prop or current window)
-      this.shareUrl = url || window.location.href;
-      this.shareTitle = title;
-      this.shareText = text;
+      // Read data from attributes to allow client-side updates if needed
+      this.shareUrl = this.element.getAttribute('data-url') || window.location.href;
+      this.shareTitle = this.element.getAttribute('data-title') || '';
+      this.shareText = this.element.getAttribute('data-text') || '';
 
       this.setupWhatsApp();
       this.setupCopy();
       this.setupNative();
+    }
+
+    updateContent(title, text) {
+        if (title) this.shareTitle = title;
+        if (text) this.shareText = text;
     }
 
     setupWhatsApp() {
@@ -74,8 +80,9 @@ const { title, text = "", url } = Astro.props;
       if (!btn) return;
 
       btn.addEventListener("click", () => {
-        const message = `*${this.shareTitle}*\n${this.shareText}\n\nVer más aquí: ${this.shareUrl}`;
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+        // Build message without emojis to avoid encoding issues
+        const message = "*" + this.shareTitle + "*\n\n" + this.shareText + "\n\nVer m\u00E1s aqu\u00ED: " + this.shareUrl;
+        const whatsappUrl = "https://wa.me/?text=" + encodeURIComponent(message);
         window.open(whatsappUrl, "_blank", "noopener,noreferrer");
       });
     }
@@ -123,6 +130,7 @@ const { title, text = "", url } = Astro.props;
 
   // Instantiate for each component specifically
   document.querySelectorAll(".social-share").forEach((el) => {
-    new SocialShareController(el);
+    // Save instance to element for external access
+    el._controller = new SocialShareController(el);
   });
 </script>
