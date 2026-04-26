@@ -9,7 +9,15 @@ const navItems = [
   { name: "Vida Institucional", href: "/vida-institucional" },
   { name: "Galería", href: "/galeria" },
   { name: "Comunicaciones", href: "/circulares" },
-  { name: "Agenda", href: "/agenda" },
+  {
+    name: "Agenda",
+    href: "/agenda",
+    subItems: [
+      { name: "Agenda por semana", href: "/agenda#agenda-semana" },
+      { name: "Agenda por día", href: "/agenda#agenda-dia" },
+      { name: "Agenda por mes", href: "/agenda#agenda-mes" },
+    ],
+  },
   {
     name: "Master2000",
     href: "https://login.master2000.net/ingreso/?A=105001008486&&",
@@ -37,22 +45,40 @@ const { pathname } = Astro.url;
     </a>
 
     <!-- Desktop Navigation -->
-    <div class="hidden lg:flex items-center h-full overflow-x-auto lg:overflow-visible no-scrollbar">
+    <div class="hidden lg:flex items-center h-full space-x-1">
       {
         navItems.map((item) => (
-          <a
-            href={item.href}
-            target={item.external ? "_blank" : "_self"}
-            rel={item.external ? "noopener noreferrer" : ""}
-            class={`relative flex h-16 items-center px-3 xl:px-4 text-[10px] xl:text-xs font-bold uppercase tracking-wider transition-colors hover:text-primary whitespace-nowrap ${
-              pathname === item.href ||
-              (item.href !== "/" && pathname.startsWith(item.href))
-                ? "text-primary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:bg-primary"
-                : "text-brand-dark hover:bg-brand-light/20"
-            }`}
-          >
-            {item.name}
-          </a>
+          <div class="relative h-16 group">
+            <a
+              href={item.href}
+              target={item.external ? "_blank" : "_self"}
+              rel={item.external ? "noopener noreferrer" : ""}
+              class={`flex h-full items-center px-3 xl:px-4 text-[10px] xl:text-xs font-bold uppercase tracking-wider transition-colors hover:text-primary whitespace-nowrap ${
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href))
+                  ? "text-primary border-b-4 border-primary"
+                  : "text-brand-dark hover:bg-brand-light/20"
+              }`}
+            >
+              {item.name}
+              {item.subItems && (
+                <Icon name="lucide:chevron-down" class="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+              )}
+            </a>
+            
+            {item.subItems && (
+              <div class="absolute left-0 top-16 hidden w-48 bg-white shadow-lg border border-gray-100 group-hover:block z-50 rounded-b-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                {item.subItems.map((sub) => (
+                  <a
+                    href={sub.href}
+                    class="block px-4 py-3 text-[10px] font-bold uppercase tracking-wider text-brand-dark hover:bg-brand-light/30 hover:text-primary transition-colors"
+                  >
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         ))
       }
     </div>
@@ -71,23 +97,51 @@ const { pathname } = Astro.url;
   <!-- Mobile Navigation -->
   <div
     id="mobile-menu"
-    class="hidden border-t border-gray-100 lg:hidden bg-white"
+    class="hidden border-t border-gray-100 lg:hidden bg-white max-h-[calc(100vh-64px)] overflow-y-auto"
   >
     <div class="flex flex-col space-y-1 p-4">
       {
         navItems.map((item) => (
-          <a
-            href={item.href}
-            target={item.external ? "_blank" : "_self"}
-            rel={item.external ? "noopener noreferrer" : ""}
-            class={`px-4 py-3 text-sm font-bold uppercase tracking-wide rounded-xl transition-colors ${
-              pathname === item.href
-                ? "bg-primary text-white"
-                : "text-brand-dark hover:bg-brand-light"
-            }`}
-          >
-            {item.name}
-          </a>
+          <div class="flex flex-col">
+            <div class="flex items-center justify-between">
+              <a
+                href={item.href}
+                target={item.external ? "_blank" : "_self"}
+                rel={item.external ? "noopener noreferrer" : ""}
+                class={`flex-grow px-4 py-3 text-sm font-bold uppercase tracking-wide rounded-xl transition-colors ${
+                  pathname === item.href
+                    ? "bg-primary text-white"
+                    : "text-brand-dark hover:bg-brand-light"
+                }`}
+              >
+                {item.name}
+              </a>
+              {item.subItems && (
+                <button 
+                  class="p-3 text-brand-dark mobile-submenu-toggle"
+                  data-target={`submenu-${item.name.toLowerCase()}`}
+                >
+                  <Icon name="lucide:chevron-down" class="h-5 w-5" />
+                </button>
+              )}
+            </div>
+            
+            {item.subItems && (
+              <div 
+                id={`submenu-${item.name.toLowerCase()}`}
+                class="hidden flex flex-col pl-6 space-y-1 mt-1 pb-2"
+              >
+                {item.subItems.map((sub) => (
+                  <a
+                    href={sub.href}
+                    class="px-4 py-2 text-xs font-bold uppercase tracking-wide text-brand-dark/70 hover:text-primary rounded-lg hover:bg-brand-light transition-colors"
+                  >
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         ))
       }
     </div>
@@ -110,5 +164,20 @@ const { pathname } = Astro.url;
 
   btn?.addEventListener("click", () => {
     menu?.classList.toggle("hidden");
+  });
+
+  // Toggle submenus on mobile
+  document.querySelectorAll('.mobile-submenu-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const submenu = document.getElementById(targetId);
+      if (submenu) {
+        submenu.classList.toggle('hidden');
+        const icon = button.querySelector('svg');
+        if (icon) {
+          icon.style.transform = submenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+      }
+    });
   });
 </script>

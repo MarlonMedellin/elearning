@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import PageHeader from "../components/PageHeader.astro";
 import SocialShare from "../components/ui/SocialShare.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout
@@ -14,34 +15,123 @@ import SocialShare from "../components/ui/SocialShare.astro";
   <Navbar />
   <PageHeader title="Agenda Semanal IE Capilla del Rosario" />
 
-  <main class="container mx-auto px-4 lg:px-8 py-12">
-    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-      <div class="p-4 lg:p-8 flex justify-center">
-        <div class="relative w-full overflow-hidden" style="padding-top: 56.25%;">
-             <iframe 
-                src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FBogota&showPrint=0&title=Agenda%20Semanal%20IE%20Capilla%20del%20Rosario&mode=WEEK&src=Y29tdW5pY2FjaW9uZXNAbGFjYXBpbGxhLmVkdS5jbw&src=ZXMuY28jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039be5&color=%230b8043" 
-                style="border:0; position: absolute; top:0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%;" 
-                frameborder="0" 
-                scrolling="no"
-                title="Agenda Semanal IE Capilla del Rosario"
-                class="rounded-lg shadow-inner"
-            ></iframe>
-        </div>
-      </div>
-
-      <div class="p-6 lg:p-8 border-t border-gray-100 bg-gray-50/30">
-        <div id="agenda-share-container">
-            <SocialShare 
-                title="Agenda Semanal IE Capilla del Rosario"
-                text="Consulta aqu&iacute; todas las actividades y eventos programados para esta semana en nuestra instituci&oacute;n."
-                waIcon="lucide:calendar"
-            />
-        </div>
+  <main class="container mx-auto px-4 lg:px-8 py-12 space-y-16">
+    <!-- Institutional Disclaimer -->
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-2xl shadow-sm mb-12">
+      <div class="flex items-start gap-4">
+        <Icon name="lucide:info" class="h-6 w-6 text-blue-600 mt-1 shrink-0" />
+        <p class="text-blue-800 text-sm md:text-base leading-relaxed italic">
+          "Este es un proyecto nuevo de la instituci&oacute;n, en proceso de construcci&oacute;n y mejora continua. Puede requerir ajustes. Agradecemos que todas las observaciones sean respetuosas, asertivas y propositivas para fortalecerlo conjuntamente."
+        </p>
       </div>
     </div>
-    
-    <div class="mt-8 text-center text-gray-500 max-w-2xl mx-auto">
-      <p class="text-sm">Si tiene dificultades para visualizar el calendario, aseg&uacute;rese de estar conectado a internet o consulte directamente con la coordinaci&oacute;n institucional.</p>
+
+    <!-- Agenda por Semana -->
+    <section id="agenda-semana" class="scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div class="flex items-center gap-3">
+          <Icon name="lucide:calendar-days" class="h-8 w-8 text-primary" />
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark">Agenda por Semana</h2>
+            <p class="text-gray-500 text-sm mt-1">Vista detallada de la programaci&oacute;n semanal institucional.</p>
+          </div>
+        </div>
+        <SocialShare 
+            title="Agenda Semanal IE Capilla del Rosario"
+            text="Consulta aqu&iacute; todas las actividades programadas para esta semana."
+            url={Astro.url.origin + "/agenda#agenda-semana"}
+            waIcon="lucide:calendar"
+        />
+      </div>
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        <div class="p-4 lg:p-8 flex justify-center">
+          <div class="relative w-full overflow-hidden" style="padding-top: 56.25%;">
+               <iframe 
+                  src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FBogota&showPrint=0&title=Agenda%20Semanal%20IE%20Capilla%20del%20Rosario&mode=WEEK&src=Y29tdW5pY2FjaW9uZXNAbGFjYXBpbGxhLmVkdS5jbw&src=ZXMuY28jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039be5&color=%230b8043" 
+                  style="border:0; position: absolute; top:0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%;" 
+                  frameborder="0" 
+                  scrolling="no"
+                  title="Agenda Semanal"
+                  class="rounded-lg shadow-inner"
+              ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda por Día -->
+    <section id="agenda-dia" class="scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div class="flex items-center gap-3">
+          <Icon name="lucide:calendar-check" class="h-8 w-8 text-primary" />
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark">Agenda por D&iacute;a</h2>
+            <p class="text-gray-500 text-sm mt-1">Actividades y eventos programados para el d&iacute;a de hoy.</p>
+          </div>
+        </div>
+        <SocialShare 
+            title="Agenda Diaria IE Capilla del Rosario"
+            text="Consulta aqu&iacute; las actividades programadas para el d&iacute;a de hoy."
+            url={Astro.url.origin + "/agenda#agenda-dia"}
+            waIcon="lucide:calendar-check"
+        />
+      </div>
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        <div class="p-4 lg:p-8 flex justify-center">
+          <div class="relative w-full overflow-hidden" style="padding-top: 56.25%;">
+               <iframe 
+                  src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FBogota&showPrint=0&title=Agenda%20Diaria%20IE%20Capilla%20del%20Rosario&mode=AGENDA&src=Y29tdW5pY2FjaW9uZXNAbGFjYXBpbGxhLmVkdS5jbw&src=ZXMuY28jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039be5&color=%230b8043" 
+                  style="border:0; position: absolute; top:0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%;" 
+                  frameborder="0" 
+                  scrolling="no"
+                  title="Agenda Diaria"
+                  class="rounded-lg shadow-inner"
+              ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda por Mes -->
+    <section id="agenda-mes" class="scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div class="flex items-center gap-3">
+          <Icon name="lucide:calendar-range" class="h-8 w-8 text-primary" />
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark">Agenda por Mes</h2>
+            <p class="text-gray-500 text-sm mt-1">Panorama general de actividades y eventos mensuales.</p>
+          </div>
+        </div>
+        <SocialShare 
+            title="Agenda Mensual IE Capilla del Rosario"
+            text="Consulta aqu&iacute; el panorama general de actividades de este mes."
+            url={Astro.url.origin + "/agenda#agenda-mes"}
+            waIcon="lucide:calendar-range"
+        />
+      </div>
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        <div class="p-4 lg:p-8 flex justify-center">
+          <div class="relative w-full overflow-hidden" style="padding-top: 56.25%;">
+               <iframe 
+                  src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FBogota&showPrint=0&title=Agenda%20Mensual%20IE%20Capilla%20del%20Rosario&mode=MONTH&src=Y29tdW5pY2FjaW9uZXNAbGFjYXBpbGxhLmVkdS5jbw&src=ZXMuY28jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039be5&color=%230b8043" 
+                  style="border:0; position: absolute; top:0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%;" 
+                  frameborder="0" 
+                  scrolling="no"
+                  title="Agenda Mensual"
+                  class="rounded-lg shadow-inner"
+              ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-12 bg-gray-50 rounded-2xl p-6 border border-gray-200 text-center max-w-4xl mx-auto">
+      <p class="text-sm text-gray-600 mb-2 font-medium italic">
+        Nota: Todos los horarios mostrados corresponden al mismo calendario institucional, visualizado en diferentes formatos para su comodidad.
+      </p>
+      <p class="text-xs text-gray-500">
+        Si tiene dificultades para visualizar el calendario, aseg&uacute;rese de estar conectado a internet o consulte directamente con la coordinaci&oacute;n institucional.
+      </p>
     </div>
   </main>
 
