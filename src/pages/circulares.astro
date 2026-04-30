@@ -105,6 +105,73 @@ import { Icon } from "astro-icon/components";
         </div>
       </div>
 
+      <!-- Nuevo Evento: Jean Day -->
+      <div
+        class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 mb-10 relative overflow-hidden"
+      >
+        <div class="absolute top-0 right-0 p-8 opacity-5">
+          <Icon name="lucide:shirt" class="w-32 h-32 text-primary" />
+        </div>
+
+        <div class="relative z-10">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6"
+          >
+            <Icon name="lucide:calendar-heart" class="w-4 h-4" /> Jornada Especial
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-6 md:items-start mb-6">
+            <div class="flex-1">
+              <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
+                Día de Jean Day - Viernes 8 de mayo
+              </h2>
+              
+              <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                ¡Hola estudiantes! El viernes 8 de mayo tendremos un <strong>'Jean Day'</strong> (día de ropa de calle) en el colegio. Vamos a recoger dinero para celebrar el Día del Niño con los niños de primaria.
+              </p>
+              
+              <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 mb-4">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <Icon name="lucide:coins" class="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
+                    <span class="text-gray-700">Si vienes con ropa de calle, debes traer <strong>$1.000 pesos</strong>.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <Icon name="lucide:shirt" class="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span class="text-gray-700">Si no traes el dinero, debes venir con el <strong>uniforme normal</strong>.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <Icon name="lucide:clock" class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span class="text-gray-700">Las clases serán en el <strong>horario normal</strong> de siempre.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="md:w-72 flex-shrink-0 place-self-start md:place-self-auto p-2 bg-white rounded-xl border border-gray-200 shadow-sm"
+            >
+              <a href="/assets/jean-day.jpeg" target="_blank" class="block group cursor-zoom-in" title="Click para ampliar imagen">
+                <img
+                  src="/assets/jean-day.jpeg"
+                  alt="Invitación Jean Day"
+                  class="w-full h-auto rounded-lg object-contain transition-transform group-hover:scale-[1.02]"
+                />
+                <div class="mt-2 flex items-center justify-center gap-1.5 text-xs text-gray-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Icon name="lucide:maximize-2" class="w-3 h-3" /> Ver pantalla completa
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <SocialShare
+            title="Día de Jean Day - Viernes 8 de mayo"
+            text="¡Hola estudiantes! El viernes 8 de mayo tendremos un 'Jean Day' (día de ropa de calle) en el colegio para celebrar el Día del Niño."
+            waIcon="lucide:shirt"
+          />
+        </div>
+      </div>
+
       <!-- Noticia Importante: Master2000 -->
       <div
         class="bg-gradient-to-br from-brand-light/20 to-white rounded-2xl shadow-sm border border-brand-light/50 p-6 md:p-10 mb-16 relative overflow-hidden"
@@ -314,67 +381,6 @@ import { Icon } from "astro-icon/components";
         </div>
       </div>
 
-      <!-- Nuevo Evento: Jean Day -->
-      <div
-        class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 mb-10 relative overflow-hidden"
-      >
-        <div class="absolute top-0 right-0 p-8 opacity-5">
-          <Icon name="lucide:shirt" class="w-32 h-32 text-primary" />
-        </div>
-
-        <div class="relative z-10">
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6"
-          >
-            <Icon name="lucide:calendar-heart" class="w-4 h-4" /> Jornada Especial
-          </div>
-
-          <div class="flex flex-col md:flex-row gap-6 md:items-start mb-6">
-            <div class="flex-1">
-              <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4">
-                Día de Jean Day - Viernes 8 de mayo
-              </h2>
-              
-              <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                ¡Hola estudiantes! El viernes 8 de mayo tendremos un <strong>'Jean Day'</strong> (día de ropa de calle) en el colegio. Vamos a recoger dinero para celebrar el Día del Niño con los niños de primaria.
-              </p>
-              
-              <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 mb-4">
-                <ul class="space-y-3">
-                  <li class="flex items-start gap-3">
-                    <Icon name="lucide:coins" class="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span class="text-gray-700">Si vienes con ropa de calle, debes traer <strong>$1.000 pesos</strong>.</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <Icon name="lucide:shirt" class="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span class="text-gray-700">Si no traes el dinero, debes venir con el <strong>uniforme normal</strong>.</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <Icon name="lucide:clock" class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span class="text-gray-700">Las clases serán en el <strong>horario normal</strong> de siempre.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div
-              class="md:w-72 flex-shrink-0 place-self-start md:place-self-auto p-2 bg-white rounded-xl border border-gray-200 shadow-sm"
-            >
-              <img
-                src="/assets/jean-day.jpeg"
-                alt="Invitación Jean Day"
-                class="w-full h-auto rounded-lg object-contain"
-              />
-            </div>
-          </div>
-          
-          <SocialShare
-            title="Día de Jean Day - Viernes 8 de mayo"
-            text="¡Hola estudiantes! El viernes 8 de mayo tendremos un 'Jean Day' (día de ropa de calle) en el colegio para celebrar el Día del Niño."
-            waIcon="lucide:shirt"
-          />
-        </div>
-      </div>
 
       <SectionHeader subtitle="Institucional" title="Circulares Oficiales" />
       <div class="mt-8">
