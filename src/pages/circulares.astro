@@ -37,74 +37,132 @@ import { Icon } from "astro-icon/components";
 
           <div class="flex flex-col gap-4 mb-8">
             <h2 class="text-2xl md:text-3xl font-bold text-brand-dark">
-              Entrega de Informes - Martes 5 de mayo
+              Entrega de Informes Académicos
             </h2>
             <p class="text-gray-700 text-lg leading-relaxed max-w-3xl">
               Se informa a toda la comunidad educativa los horarios establecidos para la entrega de informes. Por favor, asista en el horario asignado para su grado:
             </p>
           </div>
 
-          <!-- Tabla Responsiva -->
-          <div class="w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-            <div class="grid grid-cols-1 md:grid-cols-2 bg-gray-50 border-b border-gray-200 font-bold text-brand-dark hidden md:grid">
-              <div class="p-4 px-6">Población / Grados</div>
-              <div class="p-4 px-6 border-l border-gray-200">Horario de Atención</div>
-            </div>
-            
-            <div class="divide-y divide-gray-100">
-              <!-- Fila 1 -->
-              <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50/80 transition-colors">
-                <div class="p-4 px-6 flex items-center gap-3">
-                  <div class="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-sm flex-shrink-0"></div>
-                  <span class="font-medium text-gray-800">Grados 5 a 7 y Pensar1</span>
-                </div>
-                <div class="p-4 px-6 md:border-l border-gray-100 flex items-center justify-between md:justify-start gap-2 text-primary font-bold">
-                  <span class="md:hidden text-gray-500 font-normal text-sm">Horario:</span>
-                  <div class="flex items-center gap-2">
-                    <Icon name="lucide:clock" class="w-4 h-4 text-primary/70" />
-                    6:00 AM
-                  </div>
-                </div>
+          <!-- Tabla Lunes -->
+          <div class="mb-10">
+            <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2 bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+              <Icon name="lucide:calendar-days" class="w-5 h-5 text-blue-600" />
+              Lunes, 4 de mayo
+            </h3>
+            <div class="w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+              <div class="grid grid-cols-1 md:grid-cols-2 bg-gray-50 border-b border-gray-200 font-bold text-brand-dark hidden md:grid">
+                <div class="p-4 px-6">Población / Grados</div>
+                <div class="p-4 px-6 border-l border-gray-200">Horario de Atención</div>
               </div>
-
-              <!-- Fila 2 -->
-              <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50/80 transition-colors">
-                <div class="p-4 px-6 flex items-center gap-3">
-                  <div class="w-2.5 h-2.5 rounded-full bg-orange-500 shadow-sm flex-shrink-0"></div>
-                  <span class="font-medium text-gray-800">Grados 8 a 11 y Pensar 2</span>
-                </div>
-                <div class="p-4 px-6 md:border-l border-gray-100 flex items-center justify-between md:justify-start gap-2 text-primary font-bold">
-                  <span class="md:hidden text-gray-500 font-normal text-sm">Horario:</span>
-                  <div class="flex items-center gap-2">
-                    <Icon name="lucide:clock" class="w-4 h-4 text-primary/70" />
-                    7:30 AM
+              <div class="divide-y divide-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50/80 transition-colors">
+                  <div class="p-4 px-6 flex items-center gap-3">
+                    <div class="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-sm flex-shrink-0"></div>
+                    <span class="font-medium text-gray-800">Entrega de Informes del Grado Segundo B (2B)</span>
                   </div>
-                </div>
-              </div>
-
-              <!-- Fila 3 -->
-              <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50/80 transition-colors">
-                <div class="p-4 px-6 flex items-center gap-3">
-                  <div class="w-2.5 h-2.5 rounded-full bg-green-500 shadow-sm flex-shrink-0"></div>
-                  <span class="font-medium text-gray-800">Toda primaria con modelos flexibles</span>
-                </div>
-                <div class="p-4 px-6 md:border-l border-gray-100 flex items-center justify-between md:justify-start gap-2 text-primary font-bold">
-                  <span class="md:hidden text-gray-500 font-normal text-sm">Horario:</span>
-                  <div class="flex items-center gap-2">
-                    <Icon name="lucide:clock" class="w-4 h-4 text-primary/70" />
-                    9:00 AM
+                  <div class="p-4 px-6 md:border-l border-gray-100 flex items-center justify-between md:justify-start gap-2 text-primary font-bold">
+                    <span class="md:hidden text-gray-500 font-normal text-sm">Horario:</span>
+                    <div class="flex items-center gap-2">
+                      <Icon name="lucide:clock" class="w-4 h-4 text-primary/70" />
+                      09:00 – 10:00
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Tabla Martes -->
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2 bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+              <Icon name="lucide:calendar-days" class="w-5 h-5 text-green-600" />
+              Martes, 5 de mayo
+            </h3>
+            <div class="w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+              <div class="grid grid-cols-1 md:grid-cols-2 bg-gray-50 border-b border-gray-200 font-bold text-brand-dark hidden md:grid">
+                <div class="p-4 px-6">Población / Grados</div>
+                <div class="p-4 px-6 border-l border-gray-200">Horario de Atención</div>
+              </div>
+              
+              <div class="divide-y divide-gray-100">
+                <!-- Fila 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50/80 transition-colors">
+                  <div class="p-4 px-6 flex items-center gap-3">
+                    <div class="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-sm flex-shrink-0"></div>
+                    <span class="font-medium text-gray-800">
+                      Entrega de Informes- Grupo 1 (5°A 5B 6A 6B a 7°A 7B + Caminar 1A CAMINAR 1B) 
+                      <span class="bg-red-100 text-red-700 px-2 py-0.5 rounded text-[10px] font-black uppercase ml-1 border border-red-200 shadow-sm inline-block">EXCEPTO 6C</span>
+                    </span>
+                  </div>
+                  <div class="p-4 px-6 md:border-l border-gray-100 flex items-center justify-between md:justify-start gap-2 text-primary font-bold">
+                    <span class="md:hidden text-gray-500 font-normal text-sm">Horario:</span>
+                    <div class="flex items-center gap-2">
+                      <Icon name="lucide:clock" class="w-4 h-4 text-primary/70" />
+                      06:00 – 07:00
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fila 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50/80 transition-colors">
+                  <div class="p-4 px-6 flex items-center gap-3">
+                    <div class="w-2.5 h-2.5 rounded-full bg-orange-500 shadow-sm flex-shrink-0"></div>
+                    <span class="font-medium text-gray-800">Entrega de Informes- Grupo 2 (8° a 11° + Caminar 2)</span>
+                  </div>
+                  <div class="p-4 px-6 md:border-l border-gray-100 flex items-center justify-between md:justify-start gap-2 text-primary font-bold">
+                    <span class="md:hidden text-gray-500 font-normal text-sm">Horario:</span>
+                    <div class="flex items-center gap-2">
+                      <Icon name="lucide:clock" class="w-4 h-4 text-primary/70" />
+                      07:30 – 08:30
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fila 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50/80 transition-colors">
+                  <div class="p-4 px-6 flex items-center gap-3">
+                    <div class="w-2.5 h-2.5 rounded-full bg-green-500 shadow-sm flex-shrink-0"></div>
+                    <span class="font-medium text-gray-800">
+                      Entrega de Informes- Primaria. 
+                      <span class="bg-red-100 text-red-700 px-2 py-0.5 rounded text-[10px] font-black uppercase ml-1 border border-red-200 shadow-sm inline-block">Excepto Aceleración A y B</span>
+                    </span>
+                  </div>
+                  <div class="p-4 px-6 md:border-l border-gray-100 flex items-center justify-between md:justify-start gap-2 text-primary font-bold">
+                    <span class="md:hidden text-gray-500 font-normal text-sm">Horario:</span>
+                    <div class="flex items-center gap-2">
+                      <Icon name="lucide:clock" class="w-4 h-4 text-primary/70" />
+                      09:00 – 10:30
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fila 4 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50/80 transition-colors">
+                  <div class="p-4 px-6 flex items-center gap-3">
+                    <div class="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-sm flex-shrink-0"></div>
+                    <span class="font-medium text-gray-800 italic">Horario especial para: 6C: Isidoro; Aceleración A y B: Carolina Diosa; Mayra</span>
+                  </div>
+                  <div class="p-4 px-6 md:border-l border-gray-100 flex items-center justify-between md:justify-start gap-2 text-primary font-bold">
+                    <span class="md:hidden text-gray-500 font-normal text-sm">Horario:</span>
+                    <div class="flex items-center gap-2">
+                      <Icon name="lucide:clock" class="w-4 h-4 text-primary/70" />
+                      10:00 – 11:00
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <SocialShare
-            title="Entrega de Informes - Martes 5 de mayo"
-            text="Se informa a toda la comunidad educativa los horarios establecidos para la entrega de informes académicos y convivenciales."
+            title="Entrega de Informes Académicos - Mayo 2026"
+            text="Se informa a toda la comunidad educativa los horarios establecidos para la entrega de informes los días 4 y 5 de mayo."
             waIcon="lucide:calendar-clock"
           />
         </div>
       </div>
+
 
       <!-- Nuevo Evento: Jean Day -->
       <div
@@ -128,7 +186,7 @@ import { Icon } from "astro-icon/components";
               </h2>
               
               <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                ¡Hola estudiantes! El viernes 8 de mayo tendremos un <strong>'Jean Day'</strong> (día de ropa de calle) en el colegio. Vamos a recoger dinero para celebrar el Día del Niño con los niños de primaria.
+                ¡Hola estudiantes! El viernes 8 de mayo tendremos un <strong>'Jean Day'</strong> (día de ropa de calle) en el colegio para recaudar fondos para celebrar el Día del Niño.
               </p>
               
               <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 mb-4">
@@ -167,7 +225,7 @@ import { Icon } from "astro-icon/components";
           
           <SocialShare
             title="Día de Jean Day - Viernes 8 de mayo"
-            text="¡Hola estudiantes! El viernes 8 de mayo tendremos un 'Jean Day' (día de ropa de calle) en el colegio para celebrar el Día del Niño."
+            text="¡Hola estudiantes! El viernes 8 de mayo tendremos un 'Jean Day' (día de ropa de calle) en el colegio para recaudar fondos para celebrar el Día del Niño."
             waIcon="lucide:shirt"
           />
         </div>
