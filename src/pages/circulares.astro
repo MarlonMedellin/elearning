@@ -20,6 +20,105 @@ import { Icon } from "astro-icon/components";
   <main class="py-20">
     <section class="container mx-auto px-4 lg:px-8">
 
+      <!-- Nueva Publicación: Día de la Niñez -->
+      <article
+        class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 mb-16 relative overflow-hidden"
+      >
+        <div class="absolute top-0 right-0 p-8 opacity-5">
+          <Icon name="lucide:party-popper" class="w-32 h-32 text-primary" />
+        </div>
+
+        <div class="relative z-10">
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold"
+            >
+              <Icon name="lucide:users" class="w-4 h-4" /> Comunidad Educativa
+            </div>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold"
+            >
+              <Icon name="lucide:calendar" class="w-4 h-4" /> 11 de mayo, 2026
+            </div>
+          </div>
+
+          <header class="mb-8">
+            <h2 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
+              Celebramos con alegría el Día de la Niñez en la IE Capilla del Rosario
+            </h2>
+            <p class="text-gray-600 text-xl font-medium leading-relaxed max-w-4xl">
+              La comunidad educativa vivió una jornada llena de actividades, juegos y espacios de alegría para celebrar a las niñas y los niños de la institución.
+            </p>
+          </header>
+
+          <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+            <p>
+              En nuestra institución educativa vivimos con enorme entusiasmo el <strong>Día de la Niñez</strong>, una fecha en la que el pasado 11 de mayo se llenó de actividades, juegos y espacios pensados especialmente para que las niñas y los niños disfrutaran y compartieran en comunidad.
+            </p>
+            <p>
+              Como comunidad educativa, nos unimos a esta celebración reconociendo a cada niño y niña como <strong>protagonista de nuestro proyecto pedagógico</strong>, promoviendo su participación, su creatividad y el buen trato en todos los espacios.
+            </p>
+          </div>
+
+          <!-- Galería Protagonista -->
+          <div class="mb-12">
+            <h3 class="text-lg font-bold text-brand-dark mb-6 flex items-center gap-2">
+              <Icon name="lucide:camera" class="w-5 h-5 text-primary" /> 
+              Momentos de la celebración
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+              {[...Array(9)].map((_, i) => (
+                <a 
+                  href={`/img/gallery/DiaNinyo2026/dia_ninyo_2026_${(i + 1).toString().padStart(2, '0')}.jpeg`}
+                  target="_blank"
+                  class="group relative aspect-square overflow-hidden rounded-xl bg-gray-100 border border-gray-200 block"
+                >
+                  <img
+                    src={`/img/gallery/DiaNinyo2026/dia_ninyo_2026_${(i + 1).toString().padStart(2, '0')}.jpeg`}
+                    alt={`Jornada del Día de la Niñez en la IE Capilla del Rosario - Foto ${i + 1}`}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <Icon name="lucide:maximize-2" class="w-6 h-6 text-white" />
+                  </div>
+                </a>
+              ))}
+            </div>
+            <p class="mt-4 text-sm text-gray-500 italic text-center">
+              Haz clic en cualquier imagen para verla en tamaño completo.
+            </p>
+          </div>
+
+          <div class="bg-brand-light/10 border border-brand-light/30 rounded-2xl p-6 md:p-8 mb-10">
+            <p class="text-gray-700 leading-relaxed mb-6">
+              Queremos seguir construyendo, junto a las familias, una <strong>IE Capilla del Rosario</strong> que protege y valora la niñez, y que abre sus puertas para que ellos vivan experiencias felices, seguras y llenas de juego.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <span class="text-brand-dark font-bold">¡Únete a nuestra comunidad en WhatsApp!</span>
+              <a 
+                href="https://whatsapp.com/channel/0029VbDemtF6buMDF0sKN22P" 
+                target="_blank"
+                class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-5 py-2.5 rounded-full font-bold transition-all shadow-md hover:shadow-lg active:scale-95"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.852.449-1.271.608-1.445.159-.173.348-.217.464-.217l.333.006c.106.005.249-.04.391.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.101-.177.211-.077.385.1.174.444.732.953 1.185.656.584 1.209.765 1.382.852.174.087.275.072.376-.045.101-.116.434-.506.549-.68.116-.174.232-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.179L2 22l4.943-1.298C8.396 21.503 10.136 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                </svg>
+                Seguir Canal
+              </a>
+            </div>
+          </div>
+
+          <SocialShare
+            title="Celebración del Día de la Niñez - IE Capilla del Rosario"
+            text="Celebramos con alegría el Día de la Niñez en la IE Capilla del Rosario. ¡Revive los mejores momentos de la jornada!"
+            waIcon="lucide:party-popper"
+          />
+        </div>
+      </article>
+
+
       <!-- Nuevo Evento: Entrega de Informes -->
       <div
         class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 mb-10 relative overflow-hidden"
