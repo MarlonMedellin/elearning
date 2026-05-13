@@ -11,7 +11,8 @@ import { Icon } from "astro-icon/components";
 
 <MainLayout
   title="Comunicaciones"
-  description="Acceda a las circulares oficiales y comunicados de la Institución. Manténgase informado sobre procesos académicos, convivenciales y administrativos mensuales."
+  description="Guía institucional con orientaciones generales para acceder a Master2000, recuperar contraseña y consultar información académica."
+  keywords="Master2000, estudiantes, acudientes, ingreso, plataforma académica, notas, boletines, asistencia, IE Capilla del Rosario"
   image="/assets/escudo.jpg"
 >
   <Navbar />
@@ -19,6 +20,214 @@ import { Icon } from "astro-icon/components";
 
   <main class="py-20">
     <section class="container mx-auto px-4 lg:px-8">
+
+      <!-- Nueva Publicación: Ingreso a Master2000 -->
+      <article
+        class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 mb-16 relative overflow-hidden"
+      >
+        <div class="absolute top-0 right-0 p-8 opacity-5">
+          <Icon name="lucide:monitor-play" class="w-32 h-32 text-primary" />
+        </div>
+
+        <div class="relative z-10">
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold"
+            >
+              <Icon name="lucide:graduation-cap" class="w-4 h-4" /> Información Académica
+            </div>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold"
+            >
+              <Icon name="lucide:calendar" class="w-4 h-4" /> 13 de mayo, 2026
+            </div>
+          </div>
+
+          <header class="mb-8">
+            <h1 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
+              Ingreso de estudiantes y acudientes a Master2000
+            </h1>
+            <p class="text-gray-600 text-xl font-medium leading-relaxed max-w-4xl">
+              Orientaciones generales para ingresar a la plataforma Master2000, recuperar la contraseña y consultar información académica e institucional.
+            </p>
+          </header>
+
+          <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+            <p>
+              Esta publicación reúne las orientaciones generales para el acceso a <strong>Master2000</strong>, la plataforma oficial de nuestra institución para la gestión académica.
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg shadow-sm my-6">
+              <div class="flex items-start gap-3">
+                <Icon name="lucide:info" class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                <p class="text-blue-800 text-sm">
+                  <strong>Nota de apoyo:</strong> Esta información se presenta como guía y algunos pasos pueden depender de la configuración activa de la plataforma en el momento del ingreso.
+                </p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+              <!-- Portal y Perfiles -->
+              <div class="space-y-8">
+                <section>
+                  <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                    <Icon name="lucide:globe" class="w-5 h-5 text-primary" /> 1. Portal de ingreso
+                  </h3>
+                  <p class="mb-4">El acceso oficial se realiza exclusivamente a través de:</p>
+                  <a 
+                    href="https://www.master2000.net/web/" 
+                    target="_blank" 
+                    class="inline-flex items-center gap-2 text-primary font-bold hover:underline bg-primary/5 px-4 py-2 rounded-lg border border-primary/20 transition-colors"
+                  >
+                    https://www.master2000.net/web/
+                    <Icon name="lucide:external-link" class="w-4 h-4" />
+                  </a>
+                </section>
+
+                <section>
+                  <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                    <Icon name="lucide:users" class="w-5 h-5 text-primary" /> 2. Perfiles de acceso
+                  </h3>
+                  <p>La plataforma cuenta con accesos diferenciados para:</p>
+                  <ul class="list-disc pl-5 mt-2 space-y-1">
+                    <li>Estudiante</li>
+                    <li>Padre / Madre / Acudiente</li>
+                  </ul>
+                </section>
+              </div>
+
+              <!-- Datos y Primer Ingreso -->
+              <div class="space-y-8">
+                <section>
+                  <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                    <Icon name="lucide:key-round" class="w-5 h-5 text-primary" /> 3. Datos solicitados
+                  </h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                      <Icon name="lucide:user" class="w-5 h-5 text-gray-400 mt-1" />
+                      <span><strong>Usuario:</strong> Normalmente es el documento de identidad o el código asignado por la institución.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <Icon name="lucide:lock" class="w-5 h-5 text-gray-400 mt-1" />
+                      <span><strong>Contraseña:</strong> La entregada por el colegio o la que haya sido creada previamente por el usuario.</span>
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                    <Icon name="lucide:sparkles" class="w-5 h-5 text-primary" /> 4. Primer ingreso
+                  </h3>
+                  <p>Al ingresar por primera vez, el sistema puede solicitar:</p>
+                  <ul class="list-disc pl-5 mt-2 space-y-2">
+                    <li>Actualización obligatoria de la contraseña.</li>
+                    <li>Registro de un correo electrónico válido.</li>
+                    <li>Validación o actualización de datos básicos de contacto.</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+
+            <hr class="my-10 border-gray-100" />
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Recuperación y Recomendaciones -->
+              <div class="space-y-8">
+                <section>
+                  <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                    <Icon name="lucide:refresh-cw" class="w-5 h-5 text-primary" /> 5. Recuperación de contraseña
+                  </h3>
+                  <p class="mb-3">Si no recuerda su clave, puede utilizar las opciones:</p>
+                  <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 italic text-sm text-brand-dark font-medium">
+                    "¿Olvidó su contraseña?" o "Restablecer contraseña"
+                  </div>
+                  <p class="mt-3 text-sm">La recuperación suele enviarse directamente al correo electrónico registrado previamente en la plataforma.</p>
+                </section>
+
+                <section>
+                  <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                    <Icon name="lucide:shield-check" class="w-5 h-5 text-primary" /> 6. Recomendaciones de uso
+                  </h3>
+                  <ul class="space-y-2">
+                    <li class="flex items-center gap-2">
+                      <Icon name="lucide:chrome" class="w-4 h-4 text-gray-500" />
+                      <span>Usar <strong>Google Chrome</strong> o <strong>Microsoft Edge</strong>.</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <Icon name="lucide:layout-template" class="w-4 h-4 text-gray-500" />
+                      <span>Permitir <strong>ventanas emergentes</strong> si el sistema lo requiere.</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <Icon name="lucide:mail" class="w-4 h-4 text-gray-500" />
+                      <span>Verificar que el <strong>correo electrónico</strong> esté bien escrito.</span>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+
+              <!-- Funciones -->
+              <section class="bg-primary/5 p-6 rounded-2xl border border-primary/10">
+                <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                  <Icon name="lucide:list-checks" class="w-5 h-5 text-primary" /> 7. Funciones disponibles
+                </h3>
+                <ul class="grid grid-cols-1 gap-3">
+                  {[
+                    { icon: "lucide:file-text", text: "Consultar notas parciales y finales" },
+                    { icon: "lucide:download", text: "Ver y descargar boletines de periodo" },
+                    { icon: "lucide:calendar-check", text: "Revisar registro de asistencia" },
+                    { icon: "lucide:clock", text: "Consultar horarios de clase" },
+                    { icon: "lucide:message-square", text: "Ver observaciones y comunicados" }
+                  ].map(item => (
+                    <li class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
+                      <Icon name={item.icon} class="w-5 h-5 text-primary/70" />
+                      <span class="text-sm font-medium">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+
+            <!-- Recurso de apoyo: Video -->
+            <div class="mt-12 p-6 md:p-8 bg-brand-dark text-white rounded-2xl shadow-lg relative overflow-hidden group">
+              <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:scale-110 transition-transform duration-500">
+                <Icon name="lucide:youtube" class="w-24 h-24" />
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-primary-light">
+                  <Icon name="lucide:video" class="w-6 h-6" /> 8. Recurso de apoyo en video
+                </h3>
+                <p class="text-gray-300 mb-6 max-w-2xl">
+                  Existe un video oficial titulado <strong>“Ingreso al panel - Master2000 (ACTUALIZADO)”</strong> en el que se explican temas como primer ingreso, recuperación de contraseña, cambio de correo y cambio de clave.
+                </p>
+                <a 
+                  href="https://www.youtube.com/watch?v=UJCNjlXaIRg" 
+                  target="_blank"
+                  class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-xl active:scale-95"
+                >
+                  <Icon name="lucide:play-circle" class="w-6 h-6" />
+                  Ver Video Tutorial
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Galería (Estructura preparada para futuro) -->
+          <div class="hidden">
+            <h3 class="text-lg font-bold text-brand-dark mb-6 flex items-center gap-2">
+              <Icon name="lucide:camera" class="w-5 h-5 text-primary" /> 
+              Galería Institucional
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {/* Espacio reservado para imágenes futuras */}
+            </div>
+          </div>
+
+          <SocialShare
+            title="Ingreso de estudiantes y acudientes a Master2000"
+            text="Guía institucional con orientaciones generales para acceder a Master2000, recuperar contraseña y consultar información académica."
+            waIcon="lucide:graduation-cap"
+          />
+        </div>
+      </article>
 
       <!-- Nueva Publicación: Día de la Niñez -->
       <article

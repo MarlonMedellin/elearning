@@ -11,12 +11,14 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  keywords?: string;
 }
 
 const {
   title,
   description = "Sitio Institucional - IE Capilla del Rosario",
   image = "/assets/escudo.jpg",
+  keywords,
 } = Astro.props;
 ---
 
@@ -27,6 +29,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} - IE Capilla del Rosario</title>
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
