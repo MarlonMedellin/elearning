@@ -21,7 +21,7 @@ import { Icon } from "astro-icon/components";
   <main class="py-20">
     <section class="container mx-auto px-4 lg:px-8">
 
-      <!-- Nueva Publicación: Gran Escuela para la Familia -->
+      <!-- Publicación: Gran Escuela para la Familia -->
       <article
         class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 mb-16 relative overflow-hidden group"
       >
@@ -48,49 +48,113 @@ import { Icon } from "astro-icon/components";
               Gran Escuela para la Familia
             </h2>
             <p class="text-gray-600 text-xl font-medium leading-relaxed max-w-4xl">
-              Invitación a madres, padres, acudientes y comunidad educativa para participar en la Gran Escuela para la Familia, un espacio para fortalecer la crianza, el bienestar y las relaciones en casa.
+              “Las familias no vienen con manual, pero sí podemos escribirlo juntos” 💜
             </p>
           </header>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-               <ul class="space-y-3">
-                  <li class="flex items-center gap-3">
-                    <Icon name="lucide:calendar-check" class="w-5 h-5 text-primary shrink-0" />
-                    <span class="text-gray-700"><strong>Fecha:</strong> Sábado 23 de mayo, 2026</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <Icon name="lucide:clock" class="w-5 h-5 text-primary shrink-0" />
-                    <span class="text-gray-700"><strong>Hora:</strong> 10:00 a.m.</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <Icon name="lucide:map-pin" class="w-5 h-5 text-primary shrink-0" />
-                    <span class="text-gray-700"><strong>Lugar:</strong> En tu comuna y corregimiento</span>
-                  </li>
-                </ul>
+          <div class="prose prose-lg max-w-none text-gray-700 mb-10">
+            <p>
+              La IE Capilla del Rosario MDE se une a la invitación de <strong>Tejiendo Hogares</strong> para participar en la <strong>Gran Escuela para la Familia</strong>: un espacio gratuito con charlas y herramientas diseñadas para fortalecer nuestra comunidad desde el hogar.
+            </p>
+          </div>
+
+          <!-- Bloque de Detalles -->
+          <div class="bg-brand-light/10 border border-brand-light/30 rounded-2xl p-6 md:p-8 mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                  <Icon name="lucide:calendar-check" class="w-6 h-6" />
+                </div>
+                <div>
+                  <span class="block text-xs font-bold text-gray-400 uppercase">Fecha</span>
+                  <span class="text-lg font-bold text-brand-dark">Sábado 23 de mayo, 2026</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                  <Icon name="lucide:clock" class="w-6 h-6" />
+                </div>
+                <div>
+                  <span class="block text-xs font-bold text-gray-400 uppercase">Hora</span>
+                  <span class="text-lg font-bold text-brand-dark">10:00 a.m. – 12:00 m.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                  <Icon name="lucide:map-pin" class="w-6 h-6" />
+                </div>
+                <div>
+                  <span class="block text-xs font-bold text-gray-400 uppercase">Lugar</span>
+                  <span class="text-lg font-bold text-brand-dark">En tu comuna y corregimiento</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                  <Icon name="lucide:sparkles" class="w-6 h-6" />
+                </div>
+                <div>
+                  <span class="block text-xs font-bold text-gray-400 uppercase">Modalidad</span>
+                  <span class="text-lg font-bold text-brand-dark">40 charlas en simultáneo</span>
+                </div>
+              </div>
             </div>
-            <div class="flex flex-col justify-center gap-4">
-              <a 
-                href="/circulares/gran-escuela-familia" 
-                class="inline-flex items-center justify-center gap-2 bg-brand-dark hover:bg-brand-dark/90 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg"
-              >
-                Ver información completa
-                <Icon name="lucide:chevron-right" class="w-5 h-5" />
-              </a>
-              <a 
-                href="https://forms.cloud.microsoft/r/kS3xEZRemJ" 
-                target="_blank"
-                class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg"
-              >
-                Inscríbete aquí
-                <Icon name="lucide:edit-3" class="w-5 h-5" />
-              </a>
+          </div>
+
+          <!-- Propósito -->
+          <div class="prose prose-lg max-w-none text-gray-700 mb-10">
+            <h3 class="text-xl font-bold text-brand-dark mb-4">¿Qué encontrarás en este espacio?</h3>
+            <p>
+              Será una jornada para compartir herramientas útiles que nos ayuden a:
+            </p>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+              <li>Fortalecer las relaciones en el hogar.</li>
+              <li>Cuidar la salud mental de la familia.</li>
+              <li>Resolver conflictos sin violencia.</li>
+              <li>Acompañar mejor a niños y adolescentes.</li>
+            </ul>
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg shadow-sm my-6">
+              <div class="flex items-start gap-3">
+                <Icon name="lucide:alert-circle" class="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
+                <p class="text-amber-800 text-sm">
+                  <strong>Importante:</strong> El evento es gratuito, pero requiere inscripción previa para conocer el lugar exacto en tu comuna.
+                </p>
+              </div>
             </div>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a 
+              href="https://forms.cloud.microsoft/r/kS3xEZRemJ" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-2xl font-black text-lg transition-all shadow-lg hover:shadow-primary/20 hover:-translate-y-1 active:scale-95"
+            >
+              <Icon name="lucide:edit-3" class="w-6 h-6" />
+              Inscríbete y participa
+            </a>
+            
+            <a 
+              href="https://www.instagram.com/reel/DYBD-9HIAbg/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 text-gray-500 hover:text-primary px-6 py-4 rounded-2xl font-bold transition-colors border border-gray-200 hover:border-primary/20 hover:bg-primary/5"
+            >
+              <Icon name="lucide:instagram" class="w-5 h-5" />
+              Ver en Instagram
+            </a>
+          </div>
+
+          <div class="text-center py-6 border-t border-gray-100 italic text-gray-600 font-medium">
+            “Los esperamos para seguir fortaleciendo juntos los vínculos familiares y el acompañamiento a nuestros estudiantes.”
           </div>
 
           <SocialShare
             title="Gran Escuela para la Familia - IE Capilla del Rosario"
-            text="Invitación institucional a madres, padres, acudientes y comunidad educativa para participar en la Gran Escuela para la Familia."
+            text="Invitación institucional a madres, padres, acudientes y comunidad educativa para participar en la Gran Escuela para la Familia el sábado 23 de mayo."
             waIcon="lucide:home"
           />
         </div>
