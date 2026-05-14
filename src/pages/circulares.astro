@@ -21,6 +21,81 @@ import { Icon } from "astro-icon/components";
   <main class="py-20">
     <section class="container mx-auto px-4 lg:px-8">
 
+      <!-- Nueva Publicación: Gran Escuela para la Familia -->
+      <article
+        class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 mb-16 relative overflow-hidden group"
+      >
+        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:scale-110 transition-transform duration-500">
+          <Icon name="lucide:home" class="w-32 h-32 text-primary" />
+        </div>
+
+        <div class="relative z-10">
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold"
+            >
+              <Icon name="lucide:users" class="w-4 h-4" /> Escuela de Familias
+            </div>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold"
+            >
+              <Icon name="lucide:calendar" class="w-4 h-4" /> 14 de mayo, 2026
+            </div>
+          </div>
+
+          <header class="mb-8">
+            <h2 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
+              Gran Escuela para la Familia
+            </h2>
+            <p class="text-gray-600 text-xl font-medium leading-relaxed max-w-4xl">
+              Invitación a madres, padres, acudientes y comunidad educativa para participar en la Gran Escuela para la Familia, un espacio para fortalecer la crianza, el bienestar y las relaciones en casa.
+            </p>
+          </header>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+               <ul class="space-y-3">
+                  <li class="flex items-center gap-3">
+                    <Icon name="lucide:calendar-check" class="w-5 h-5 text-primary shrink-0" />
+                    <span class="text-gray-700"><strong>Fecha:</strong> Sábado 23 de mayo, 2026</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <Icon name="lucide:clock" class="w-5 h-5 text-primary shrink-0" />
+                    <span class="text-gray-700"><strong>Hora:</strong> 10:00 a.m.</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <Icon name="lucide:map-pin" class="w-5 h-5 text-primary shrink-0" />
+                    <span class="text-gray-700"><strong>Lugar:</strong> En tu comuna y corregimiento</span>
+                  </li>
+                </ul>
+            </div>
+            <div class="flex flex-col justify-center gap-4">
+              <a 
+                href="/circulares/gran-escuela-familia" 
+                class="inline-flex items-center justify-center gap-2 bg-brand-dark hover:bg-brand-dark/90 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg"
+              >
+                Ver información completa
+                <Icon name="lucide:chevron-right" class="w-5 h-5" />
+              </a>
+              <a 
+                href="https://forms.cloud.microsoft/r/kS3xEZRemJ" 
+                target="_blank"
+                class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg"
+              >
+                Inscríbete aquí
+                <Icon name="lucide:edit-3" class="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          <SocialShare
+            title="Gran Escuela para la Familia - IE Capilla del Rosario"
+            text="Invitación institucional a madres, padres, acudientes y comunidad educativa para participar en la Gran Escuela para la Familia."
+            waIcon="lucide:home"
+          />
+        </div>
+      </article>
+
       <!-- Nueva Publicación: Ingreso a Master2000 -->
       <article
         class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-10 mb-16 relative overflow-hidden"
