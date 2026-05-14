@@ -47,14 +47,17 @@ import { Icon } from "astro-icon/components";
             <h2 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
               Gran Escuela para la Familia
             </h2>
-            <p class="text-gray-600 text-xl font-medium leading-relaxed max-w-4xl">
-              “Las familias no vienen con manual, pero sí podemos escribirlo juntos” 💜
+            <p class="text-gray-600 text-xl font-medium leading-relaxed max-w-4xl italic">
+              “¿Ya conoces la Gran Escuela para la Familia?”
             </p>
           </header>
 
           <div class="prose prose-lg max-w-none text-gray-700 mb-10">
             <p>
-              La IE Capilla del Rosario MDE se une a la invitación de <strong>Tejiendo Hogares</strong> para participar en la <strong>Gran Escuela para la Familia</strong>: un espacio gratuito con charlas y herramientas diseñadas para fortalecer nuestra comunidad desde el hogar.
+              Este <strong>23 de mayo</strong>, a las 10:00 a.m., realizaremos este espacio en el que podemos aprender herramientas para fortalecer la crianza, el bienestar y las relaciones en casa con quienes más amamos.
+            </p>
+            <p class="font-bold text-primary">
+              💬 Encuentros cercanos, conversaciones reales y aprendizajes que sí sirven en la vida diaria.
             </p>
           </div>
 
@@ -77,7 +80,7 @@ import { Icon } from "astro-icon/components";
                 </div>
                 <div>
                   <span class="block text-xs font-bold text-gray-400 uppercase">Hora</span>
-                  <span class="text-lg font-bold text-brand-dark">10:00 a.m. – 12:00 m.</span>
+                  <span class="text-lg font-bold text-brand-dark">10:00 a.m.</span>
                 </div>
               </div>
 
@@ -87,7 +90,7 @@ import { Icon } from "astro-icon/components";
                 </div>
                 <div>
                   <span class="block text-xs font-bold text-gray-400 uppercase">Lugar</span>
-                  <span class="text-lg font-bold text-brand-dark">En tu comuna y corregimiento</span>
+                  <span class="text-lg font-bold text-brand-dark">En tu barrio o corregimiento</span>
                 </div>
               </div>
 
@@ -96,33 +99,30 @@ import { Icon } from "astro-icon/components";
                   <Icon name="lucide:sparkles" class="w-6 h-6" />
                 </div>
                 <div>
-                  <span class="block text-xs font-bold text-gray-400 uppercase">Modalidad</span>
-                  <span class="text-lg font-bold text-brand-dark">40 charlas en simultáneo</span>
+                  <span class="block text-xs font-bold text-gray-400 uppercase">Propósito</span>
+                  <span class="text-lg font-bold text-brand-dark">Tejiendo Hogares</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Propósito -->
-          <div class="prose prose-lg max-w-none text-gray-700 mb-10">
-            <h3 class="text-xl font-bold text-brand-dark mb-4">¿Qué encontrarás en este espacio?</h3>
-            <p>
-              Será una jornada para compartir herramientas útiles que nos ayuden a:
+          <!-- Temáticas y Lugares -->
+          <div class="mb-10 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+            <h3 class="text-lg font-bold text-brand-dark mb-4 flex items-center gap-2">
+              <Icon name="lucide:list-plus" class="w-5 h-5 text-primary" /> Temáticas y Lugares Disponibles
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Consulta la programación detallada, los temas de las charlas y los puntos de encuentro habilitados por la Alcaldía de Medellín en el siguiente enlace:
             </p>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-              <li>Fortalecer las relaciones en el hogar.</li>
-              <li>Cuidar la salud mental de la familia.</li>
-              <li>Resolver conflictos sin violencia.</li>
-              <li>Acompañar mejor a niños y adolescentes.</li>
-            </ul>
-            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg shadow-sm my-6">
-              <div class="flex items-start gap-3">
-                <Icon name="lucide:alert-circle" class="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
-                <p class="text-amber-800 text-sm">
-                  <strong>Importante:</strong> El evento es gratuito, pero requiere inscripción previa para conocer el lugar exacto en tu comuna.
-                </p>
-              </div>
-            </div>
+            <a 
+              href="https://www.medellin.gov.co/es/eventos/gran-escuela-para-la-familia/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+            >
+              <Icon name="lucide:external-link" class="w-4 h-4" />
+              Conoce la programación completa aquí
+            </a>
           </div>
 
           <!-- Botones de Acción -->
@@ -134,7 +134,7 @@ import { Icon } from "astro-icon/components";
               class="flex-1 inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-2xl font-black text-lg transition-all shadow-lg hover:shadow-primary/20 hover:-translate-y-1 active:scale-95"
             >
               <Icon name="lucide:edit-3" class="w-6 h-6" />
-              Inscríbete y participa
+              Inscríbete aquí en tu barrio
             </a>
             
             <a 
@@ -148,8 +148,8 @@ import { Icon } from "astro-icon/components";
             </a>
           </div>
 
-          <div class="text-center py-6 border-t border-gray-100 italic text-gray-600 font-medium">
-            “Los esperamos para seguir fortaleciendo juntos los vínculos familiares y el acompañamiento a nuestros estudiantes.”
+          <div class="text-center py-6 border-t border-gray-100 italic text-brand-dark font-black text-xl">
+            ¡Te esperamos para seguir Tejiendo Hogares!
           </div>
 
           <SocialShare
