@@ -8,8 +8,8 @@ import CircularsTable from "../components/CircularsTable.astro";
 import SocialShare from "../components/ui/SocialShare.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import diaMaestroImg from "../assets/dia-maestro.jpeg";
-import diaProfeImg from "../assets/dia-maestro.jpg";
+import diaMaestro1 from "../assets/dia-maestro-1.png";
+import diaMaestro2 from "../assets/dia-maestro-2.png";
 ---
 
 <MainLayout
@@ -60,22 +60,22 @@ import diaProfeImg from "../assets/dia-maestro.jpg";
               <blockquote class="text-xl md:text-2xl text-brand-dark font-serif italic leading-loose text-center">
                 <p class="mb-6">
                   <span class="block">“Enseñarás a volar,</span>
-                  <span class="block text-gray-500">pero no volarán tu vuelo.</span>
+                  <span class="block">pero no volarán tu vuelo.</span>
                 </p>
                 <p class="mb-6">
                   <span class="block">Enseñarás a soñar,</span>
-                  <span class="block text-gray-500">pero no soltarán tu sueño.</span>
+                  <span class="block">pero no soltarán tu sueño.</span>
                 </p>
                 <p class="mb-8">
                   <span class="block">Enseñarás a vivir,</span>
-                  <span class="block text-gray-500">pero no vivirán tu vida.</span>
+                  <span class="block">pero no vivirán tu vida.</span>
                 </p>
-                <p class="font-medium text-lg md:text-xl">
-                  <span class="block text-primary mb-2">Sin embargo…</span>
+                <p class="text-lg md:text-xl">
+                  <span class="block">Sin embargo…</span>
                   <span class="block">en cada vuelo,</span>
                   <span class="block">en cada sueño,</span>
                   <span class="block">perdurará siempre la huella</span>
-                  <span class="block font-bold text-brand-dark">del camino enseñado.”</span>
+                  <span class="block font-bold">del camino enseñado.”</span>
                 </p>
               </blockquote>
               <footer class="mt-10 text-center">
@@ -91,14 +91,14 @@ import diaProfeImg from "../assets/dia-maestro.jpg";
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             <div class="rounded-3xl overflow-hidden shadow-md border border-gray-100 group bg-gray-50">
               <Image 
-                src={diaMaestroImg} 
+                src={diaMaestro1} 
                 alt="Conmemoración Día del Maestro - Celebración Institucional" 
                 class="w-full h-[350px] md:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
             <div class="rounded-3xl overflow-hidden shadow-md border border-gray-100 group bg-gray-50">
               <Image 
-                src={diaProfeImg} 
+                src={diaMaestro2} 
                 alt="Homenaje a nuestros docentes - Día del Maestro" 
                 class="w-full h-[350px] md:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
