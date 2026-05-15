@@ -7,12 +7,15 @@ import SectionHeader from "../components/SectionHeader.astro";
 import CircularsTable from "../components/CircularsTable.astro";
 import SocialShare from "../components/ui/SocialShare.astro";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import diaMaestroImg from "../assets/dia-maestro.jpeg";
+import diaProfeImg from "../assets/dia-maestro.jpg";
 ---
 
 <MainLayout
-  title="Comunicaciones"
-  description="Guía institucional con orientaciones generales para acceder a Master2000, recuperar contraseña y consultar información académica."
-  keywords="Master2000, estudiantes, acudientes, ingreso, plataforma académica, notas, boletines, asistencia, IE Capilla del Rosario"
+  title="Día del Maestro | IE Capilla del Rosario MDE"
+  description="Homenaje institucional de la IE Capilla del Rosario MDE en el Día del Maestro, con un mensaje de gratitud y reconocimiento a la huella de nuestros docentes."
+  keywords="Día del maestro, homenaje, docentes, IE Capilla del Rosario, educación, gratitud, institución"
   image="/assets/escudo.jpg"
 >
   <Navbar />
@@ -20,6 +23,105 @@ import { Icon } from "astro-icon/components";
 
   <main class="py-20">
     <section class="container mx-auto px-4 lg:px-8">
+
+      <!-- Publicación: Día del Maestro -->
+      <article class="bg-gradient-to-br from-brand-light/10 to-white rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 p-6 md:p-12 mb-16 relative overflow-hidden group">
+        <div class="absolute top-0 right-0 p-8 opacity-[0.03] pointer-events-none group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700">
+          <Icon name="lucide:heart-handshake" class="w-64 h-64 text-primary" />
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto">
+          <!-- Badges & Fecha -->
+          <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold tracking-wide uppercase shadow-sm">
+              <Icon name="lucide:award" class="w-4 h-4" /> Conmemoración Institucional
+            </div>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-bold tracking-wide uppercase shadow-sm">
+              <Icon name="lucide:calendar-heart" class="w-4 h-4" /> 15 de mayo, 2026
+            </div>
+          </div>
+
+          <!-- Cabecera -->
+          <header class="text-center mb-14">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-brand-dark mb-6 tracking-tight">
+              Día del Maestro
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
+              Homenaje institucional a nuestros maestros, reconociendo la huella profunda que dejan en la vida, los sueños y el camino de sus estudiantes.
+            </p>
+          </header>
+
+          <!-- Poema Central (Contenedor Editorial) -->
+          <div class="max-w-3xl mx-auto relative mb-16">
+            <Icon name="lucide:quote" class="absolute -top-6 -left-6 w-16 h-16 text-primary/10 rotate-180 hidden sm:block" />
+            <Icon name="lucide:quote" class="absolute -bottom-6 -right-6 w-16 h-16 text-primary/10 hidden sm:block" />
+            
+            <div class="bg-gray-50/80 p-8 md:p-14 rounded-3xl shadow-inner border border-gray-100 relative z-10">
+              <blockquote class="text-xl md:text-2xl text-brand-dark font-serif italic leading-loose text-center">
+                <p class="mb-6">
+                  <span class="block">“Enseñarás a volar,</span>
+                  <span class="block text-gray-500">pero no volarán tu vuelo.</span>
+                </p>
+                <p class="mb-6">
+                  <span class="block">Enseñarás a soñar,</span>
+                  <span class="block text-gray-500">pero no soltarán tu sueño.</span>
+                </p>
+                <p class="mb-8">
+                  <span class="block">Enseñarás a vivir,</span>
+                  <span class="block text-gray-500">pero no vivirán tu vida.</span>
+                </p>
+                <p class="font-medium text-lg md:text-xl">
+                  <span class="block text-primary mb-2">Sin embargo…</span>
+                  <span class="block">en cada vuelo,</span>
+                  <span class="block">en cada sueño,</span>
+                  <span class="block">perdurará siempre la huella</span>
+                  <span class="block font-bold text-brand-dark">del camino enseñado.”</span>
+                </p>
+              </blockquote>
+              <footer class="mt-10 text-center">
+                <div class="w-12 h-1 bg-primary/30 mx-auto mb-4 rounded-full"></div>
+                <cite class="text-sm font-bold text-gray-400 uppercase tracking-widest not-italic">
+                  Madre Teresa de Calcuta
+                </cite>
+              </footer>
+            </div>
+          </div>
+
+          <!-- Galería de Imágenes -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div class="rounded-3xl overflow-hidden shadow-md border border-gray-100 group bg-gray-50">
+              <Image 
+                src={diaMaestroImg} 
+                alt="Conmemoración Día del Maestro - Celebración Institucional" 
+                class="w-full h-[350px] md:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-md border border-gray-100 group bg-gray-50">
+              <Image 
+                src={diaProfeImg} 
+                alt="Homenaje a nuestros docentes - Día del Maestro" 
+                class="w-full h-[350px] md:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+            </div>
+          </div>
+
+          <!-- Cierre Institucional -->
+          <div class="text-center max-w-3xl mx-auto bg-primary/5 p-8 md:p-10 rounded-3xl border border-primary/10">
+            <p class="text-lg md:text-xl text-brand-dark leading-relaxed font-medium">
+              Hoy honramos a quienes enseñan con conocimiento, paciencia y ejemplo. En cada aprendizaje, en cada sueño acompañado y en cada camino orientado, permanece la huella invaluable de nuestros maestros.
+            </p>
+          </div>
+
+          <!-- Compartir -->
+          <div class="mt-12 flex justify-center border-t border-gray-100 pt-10">
+            <SocialShare
+              title="Día del Maestro | IE Capilla del Rosario MDE"
+              text="Homenaje institucional a nuestros docentes. En cada vuelo, en cada sueño, perdurará siempre la huella del camino enseñado."
+              waIcon="lucide:heart"
+            />
+          </div>
+        </div>
+      </article>
 
       <!-- Publicación: Gran Escuela para la Familia -->
       <article
