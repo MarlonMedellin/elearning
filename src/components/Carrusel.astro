@@ -1,15 +1,18 @@
 ---
+import { Image } from "astro:assets";
+import diaProfesorBanner from "../assets/dia-profesor-banner.png";
+
 const slides = [
   {
     id: 1,
-    image: "/img/gallery/banner100.jpg",
-    alt: "Banner Institucional",
+    image: diaProfesorBanner,
+    alt: "Conmemoración Institucional - Día del Maestro",
   },
 ];
 ---
 
 <section
-  class="relative w-full overflow-hidden"
+  class="relative w-full overflow-hidden bg-brand-dark"
   aria-label="Galería de imágenes"
 >
   <!-- Contenedor del Carrusel -->
@@ -19,23 +22,52 @@ const slides = [
     {
       slides.map((slide) => (
         <div class="w-full flex-shrink-0 snap-center relative">
-          <img
+          <Image
             src={slide.image}
             alt={slide.alt}
-            class="w-full h-auto object-contain max-h-[85vh]"
+            class="w-full h-auto object-cover max-h-[85vh] opacity-90"
             loading="eager"
           />
+          
+          <!-- Capa oscura para mejor legibilidad -->
+          <div class="absolute inset-0 bg-black/30"></div>
+
+          <!-- Poema Superpuesto -->
+          <div class="absolute inset-0 flex items-center justify-center p-6 md:p-12">
+            <div class="bg-black/50 backdrop-blur-md p-8 md:p-14 rounded-3xl border border-white/20 text-white text-center max-w-4xl shadow-2xl">
+              <blockquote class="text-xl md:text-3xl font-serif italic leading-relaxed">
+                <p class="mb-4">
+                  <span class="block text-gray-200">“Enseñarás a volar,</span>
+                  <span class="block text-gray-200">pero no volarán tu vuelo.</span>
+                </p>
+                <p class="mb-4">
+                  <span class="block text-gray-200">Enseñarás a soñar,</span>
+                  <span class="block text-gray-200">pero no soltarán tu sueño.</span>
+                </p>
+                <p class="mb-4">
+                  <span class="block text-gray-200">Enseñarás a vivir,</span>
+                  <span class="block text-gray-200">pero no vivirán tu vida.</span>
+                </p>
+                <p class="text-2xl md:text-4xl mt-8">
+                  <span class="block text-primary-light font-medium">Sin embargo…</span>
+                  <span class="block text-primary-light font-medium">en cada vuelo,</span>
+                  <span class="block text-primary-light font-medium">en cada sueño,</span>
+                  <span class="block text-white">perdurará siempre la huella</span>
+                  <span class="block font-black text-white">del camino enseñado.”</span>
+                </p>
+              </blockquote>
+              <footer class="mt-8">
+                <div class="w-16 h-1 bg-primary mx-auto mb-4 rounded-full"></div>
+                <cite class="text-sm md:text-base font-bold uppercase tracking-widest not-italic text-gray-300">
+                  Madre Teresa de Calcuta
+                </cite>
+              </footer>
+            </div>
+          </div>
         </div>
       ))
     }
   </div>
-
-  {
-    /* 
-    Indicadores o flechas podrían ir aqui en el futuro.
-    Por ahora, con una sola imagen, no son necesarios.
-  */
-  }
 </section>
 
 <style>
