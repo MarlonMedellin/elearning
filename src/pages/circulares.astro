@@ -13,9 +13,9 @@ import diaMaestro2 from "../assets/dia-maestro-2.png";
 ---
 
 <MainLayout
-  title="Horario especial viernes 22 de mayo"
-  description="Aviso institucional sobre jornada especial y ajuste de horario para el viernes 22 de mayo por proceso de formación docente."
-  keywords="Horario especial, aviso institucional, IE Capilla del Rosario, formación docente"
+  title="Suspensión de clases viernes 29 de mayo"
+  description="Aviso institucional: El viernes 29 de mayo no habrá clases ya que la institución será puesto de votación para las elecciones del domingo."
+  keywords="Suspensión de clases, elecciones, puesto de votación, aviso institucional, IE Capilla del Rosario"
   image="/assets/escudo.jpg"
 >
   <Navbar />
@@ -23,6 +23,72 @@ import diaMaestro2 from "../assets/dia-maestro-2.png";
 
   <main class="py-20">
     <section class="container mx-auto px-4 lg:px-8">
+
+      <!-- Publicación: Suspensión de Clases -->
+      <article class="bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 p-6 md:p-10 mb-16 relative overflow-hidden group">
+        <div class="absolute top-0 right-0 p-8 opacity-[0.03] pointer-events-none group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700">
+          <Icon name="lucide:alert-triangle" class="w-64 h-64 text-red-600" />
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+          <!-- Badges & Fecha -->
+          <div class="flex flex-wrap items-center gap-3 mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-red-100 text-red-800 rounded-full text-sm font-bold tracking-wide uppercase shadow-sm">
+              <Icon name="lucide:alert-circle" class="w-4 h-4" /> Aviso Importante
+            </div>
+            <time datetime="2026-05-25" class="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-bold tracking-wide uppercase shadow-sm">
+              <Icon name="lucide:calendar-clock" class="w-4 h-4" /> 25 de mayo, 2026
+            </time>
+          </div>
+
+          <!-- Cabecera -->
+          <header class="mb-10">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-brand-dark mb-4 tracking-tight">
+              Suspensión de clases el viernes 29 de mayo
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
+              Informamos a toda la comunidad educativa que este <strong>viernes 29 de mayo no habrá clases</strong> en nuestra institución.
+            </p>
+          </header>
+
+          <!-- Detalles -->
+          <div class="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-100 mb-10">
+            <ul class="space-y-6">
+              <li class="flex items-start gap-4">
+                <div class="text-2xl mt-1">🗳️</div>
+                <div>
+                  <strong class="block text-brand-dark text-lg mb-1">Motivo Institucional</strong>
+                  <span class="text-gray-700 text-lg">La IE Capilla del Rosario ha sido designada como puesto de votación para la jornada electoral de este próximo domingo. Es necesario entregar las instalaciones con antelación para la adecuación logística de la Registraduría.</span>
+                </div>
+              </li>
+              
+              <li class="flex items-start gap-4">
+                <div class="text-2xl mt-1">📅</div>
+                <div>
+                  <strong class="block text-brand-dark text-lg mb-1">Retorno a clases</strong>
+                  <span class="text-gray-700 text-lg">Las actividades académicas se retomarán con normalidad el siguiente día hábil.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Cierre Institucional -->
+          <div class="bg-primary/5 p-6 rounded-2xl border border-primary/10 mb-10">
+            <p class="text-lg text-brand-dark font-medium italic text-center sm:text-left">
+              Agradecemos la comprensión y difusión de esta información a todas las familias de nuestra comunidad.
+            </p>
+          </div>
+
+          <!-- Compartir -->
+          <div class="flex justify-center border-t border-gray-100 pt-8">
+            <SocialShare
+              title="Suspensión de clases viernes 29 de mayo"
+              text="Atención comunidad: El viernes 29 de mayo no habrá clases ya que la IE Capilla del Rosario será puesto de votación este domingo."
+              waIcon="lucide:bell-ring"
+            />
+          </div>
+        </div>
+      </article>
 
       <!-- Publicación: Horario Especial -->
       <article class="bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 p-6 md:p-10 mb-16 relative overflow-hidden group">
