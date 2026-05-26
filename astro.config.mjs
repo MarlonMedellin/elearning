@@ -5,6 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { execSync } from "child_process";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // Get git hash for versioning
 let gitHash = "N/A";
 try {
@@ -17,10 +19,13 @@ try {
 export default defineConfig({
   site: "https://lacapilla.edu.co",
   integrations: [icon(), sitemap()],
+
   vite: {
     plugins: [tailwindcss()],
     define: {
       "import.meta.env.PUBLIC_GIT_HASH": JSON.stringify(gitHash),
     },
   },
+
+  adapter: cloudflare()
 });
